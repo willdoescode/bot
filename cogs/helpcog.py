@@ -33,9 +33,9 @@ class Help(commands.Cog):
 
 		for names, values in help2_commands.items():
 			alsoembed.add_field(name=names, value=values, inline=True)
-
-		await ctx.send(embed=embed)
-		await ctx.send(embed=alsoembed)
+		person = ctx.author
+		await person.send(embed=embed)
+		await person.send(embed=alsoembed)
 
 
 def setup(bot):
