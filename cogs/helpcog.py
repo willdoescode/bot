@@ -1,0 +1,42 @@
+from discord.ext import commands
+import discord
+import json
+
+
+class Help(commands.Cog):
+	def __init__(self, bot):
+		self.bot = bot
+
+	@commands.command()
+	async def help(self, ctx):
+
+		with open('help.json') as f:
+			help_commands = json.load(f)
+
+		with open('help2.json') as f:
+			help2_commands = json.load(f)
+
+		alsoembed = discord.Embed(
+			color=discord.Color.orange()
+		)
+
+		embed = discord.Embed(
+			color=discord.Color.orange()
+		)
+
+		embed.set_author(
+			name='Help is here'
+		)
+
+		for name, value in help_commands.items():
+			embed.add_field(name=name, value=value, inline=True)
+
+		for names, values in help2_commands.items():
+			alsoembed.add_field(name=names, value=values, inline=True)
+
+		await ctx.send(embed=embed)
+		await ctx.send(embed=alsoembed)
+
+
+def setup(bot):
+	bot.add_cog(Help(bot))
