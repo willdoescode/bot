@@ -32,6 +32,11 @@ class Events(commands.Cog):
 			value='Has connected'
 		)
 		await channel.send(embed=embed)
+		print('Servers connected to:')
+
+		for server in self.bot.servers:
+			print(server.name)
+
 		print(f'{self.bot.user.name} has connected to discord')
 
 	@commands.Cog.listener()
