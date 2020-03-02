@@ -2,12 +2,14 @@
   <dictionary name="willlane">
     <words>
       <w>alsoembed</w>
+      <w>asctime</w>
       <w>cmessage</w>
       <w>coinflip</w>
       <w>discordkey</w>
       <w>getreddit</w>
       <w>hashtag</w>
       <w>imgur</w>
+      <w>levelname</w>
       <w>modmodmod</w>
       <w>reddit</w>
       <w>showerthought</w>
