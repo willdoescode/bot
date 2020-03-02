@@ -46,6 +46,16 @@ class ChatManage(commands.Cog):
 	async def yell_here(self, ctx, *, message=None):
 		await ctx.send(f'@here {message}')
 
+	@commands.command()
+	async def connected_servers(self, ctx):
+		servers = list(self.bot.servers)
+		embed = discord.Embed(
+			color=discord.Color.green()
+		)
+		for server in servers:
+			embed.add_field(name=f'{server}', value='')
+		await ctx.send(embed=embed)
+
 
 def setup(bot):
 	bot.add_cog(ChatManage(bot))
