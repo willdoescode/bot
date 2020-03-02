@@ -40,8 +40,8 @@ class WebScraping(commands.Cog):
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)
-		for key, value in mean.items():
-			embed.add_field(name=f'{key}', value=f'{value}', inline=True)
+		for name, value in mean.items():
+			embed.add_field(name=name, value=value, inline=True)
 		await ctx.send(embed=embed)
 
 	@commands.command()
