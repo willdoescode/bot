@@ -32,7 +32,7 @@ class Events(commands.Cog):
 			value='Has connected'
 		)
 		await channel.send(embed=embed)
-		print(f'{self.bot.user.name}')
+		print(f'{self.bot.user.name} has connected to discord')
 
 	@commands.Cog.listener()
 	async def on_member_join(self, ctx, member: discord.Member):
