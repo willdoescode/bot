@@ -127,16 +127,6 @@ class FunCommands(commands.Cog):
 		await ctx.send(embed=embed)
 
 	@commands.command()
-	async def google(self, ctx, query: str, amount):
-		embed = discord.Embed(
-			color=discord.Color.dark_green()
-		)
-		q = query
-		for result in search(q, tld='co.in', num=amount, stop=1, pause=2):
-			embed.add_field(name=result, value='', inline=True)
-		await ctx.send(embed=embed)
-
-	@commands.command()
 	async def getinfo(self, ctx, member: discord.Member):
 		name = member.display_name
 		status = member.status
