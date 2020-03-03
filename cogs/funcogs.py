@@ -145,13 +145,13 @@ class FunCommands(commands.Cog):
 		)
 		await ctx.send(embed=embed)
 
-	@commands.command()
-	async def embed(self, ctx, *, message: str):
-		em = discord.Embed(
+	@commands.command(aliases=['embed'])
+	async def em(self, ctx, *, message: str):
+		embed = discord.Embed(
 			color=discord.Color.green()
 		)
-		em.add_field(name=ctx.author, value=message, inline=True)
-		await ctx.send(em=em)
+		embed.add_field(name=ctx.author, value=message, inline=True)
+		await ctx.send(embed=embed)
 
 
 def setup(bot):
