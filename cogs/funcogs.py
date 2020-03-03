@@ -146,6 +146,7 @@ class FunCommands(commands.Cog):
 		await ctx.send(embed=embed)
 
 	@commands.command(aliases=['embed'])
+	@commands.has_permissions(manage_messages=True)
 	async def em(self, ctx, *, message: str):
 		embed = discord.Embed(
 			color=discord.Color.green()
