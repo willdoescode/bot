@@ -25,7 +25,7 @@ class ChatManage(commands.Cog):
 		async for _ in channel.history(limit=None):
 			count += 1
 		embed.add_field(
-			name=channel,
+			name=channel.mention,
 			value=str(count),
 			inline=True
 	    )
