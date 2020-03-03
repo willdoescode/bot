@@ -140,7 +140,7 @@ class FunCommands(commands.Cog):
 		embed.add_field(
 			name=name,
 			value=f'joined: {joined}\nstatus: {status}\nactivity: {activity}\nroles: '
-			      f'{roles}\nguild: {guild}'
+			      f'{roles.name}\nguild: {guild}'
 		)
 		await ctx.send(embed=embed)
 
