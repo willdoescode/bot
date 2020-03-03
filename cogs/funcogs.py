@@ -140,9 +140,18 @@ class FunCommands(commands.Cog):
 		embed.add_field(
 			name=name,
 			value=f'joined: {joined}\nstatus: {status}\nactivity: {activity}\nroles: '
-			      f'{roles}\nguild: {guild}'
+			      f'{roles}\nguild: {guild}',
+			inline=True
 		)
 		await ctx.send(embed=embed)
+
+	@commands.command()
+	async def embed(self, ctx, *, message: str):
+		em = discord.Embed(
+			color=discord.Color.green()
+		)
+		em.add_field(name=ctx.author, value=message, inline=True)
+		await ctx.send(em=em)
 
 
 def setup(bot):
