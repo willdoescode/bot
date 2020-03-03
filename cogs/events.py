@@ -42,9 +42,24 @@ class Events(commands.Cog):
 			print(guild.name)
 
 	@commands.Cog.listener()
-	async def on_member_remove(self, member):
-		channel = discord.utils.get(self.bot.get_all_channels(), name='joins-and-leaves')
-		await channel.send(f'Sad to see you go @{member}')
+	async def on_member_join(self, member: discord.Member):
+		embed = discord.Embed(
+			color=discord.Color.green()
+		)
+		server = member.guild
+		try:
+			for channel in server.text_channels:
+				if channel.name == 'joins-and-leaves':
+					embed.add_field(
+						name='Welcome To The Server',
+						value=member.display_name
+					)
+					await channel.send(embed=embed)
+					embed = discord.Embed(
+						color=discord.Color.green()
+					)
+		except:
+			print('no joins and leaves channel')
 
 
 def setup(bot):
