@@ -35,8 +35,6 @@ class Events(commands.Cog):
 					)
 					await channel.send(embed=embed)
 					print(f'{self.bot.user.name} has connected to discord')
-				else:
-					break
 		async for guild in self.bot.fetch_guilds(limit=150):
 			print(guild.name)
 
