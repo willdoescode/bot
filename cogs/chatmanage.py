@@ -25,11 +25,11 @@ class ChatManage(commands.Cog):
 		async for _ in channel.history(limit=None):
 			count += 1
 		embed.add_field(
-			name=channel.mention,
+			name=channel.name,
 			value=str(count),
 			inline=True
 	    )
-		embed.set_image(url='https://imgur.com/gallery/K16VPM5')
+		embed.set_image(url='https://i.imgur.com/J1auBSs.png')
 
 		await ctx.send(embed=embed)
 
