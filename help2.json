@@ -6,5 +6,7 @@
   ".warn": "warns users",
   ".give_role": "allows for the giving of roles",
   ".cmessage": "shows total messages in channel",
-  ".connected_servers": "shows list of connected servers"
+  ".connected_servers": "shows list of connected servers",
+  ".google": "self explanatory",
+  ".getinfo": "gets info on a user"
 }
