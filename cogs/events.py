@@ -33,6 +33,8 @@ class Events(commands.Cog):
 		)
 		await channel.send(embed=embed)
 		print(f'{self.bot.user.name} has connected to discord')
+		async for guild in self.bot.fetch_guilds(limit=150):
+			print(guild.name)
 
 	@commands.Cog.listener()
 	async def on_member_join(self, ctx, member: discord.Member):
@@ -40,6 +42,8 @@ class Events(commands.Cog):
 			color=discord.Color.green()
 		)
 		channel = discord.utils.get(self.bot.get_all_channels(), name='joins-and-leaves')
+		server = member.guild
+		channel = server.utils.get(self.bot.get_all_channels(), name='joins-and-leaves')
 		embed.add_field(
 			name='Welcome to the server:',
 			value=f'@{member}',
