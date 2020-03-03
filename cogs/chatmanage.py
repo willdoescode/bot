@@ -9,7 +9,7 @@ class ChatManage(commands.Cog):
 	@commands.command()
 	@commands.has_permissions(manage_messages=True)
 	async def clear(self, ctx, amount=100000):
-		await ctx.channel.purge(limit=amount)
+		await ctx.channel.purge(limit=amount + 1)
 
 	@commands.command()
 	async def ping(self, ctx):
