@@ -17,11 +17,21 @@ class ChatManage(commands.Cog):
 
 	@commands.command()
 	async def cmessage(self, ctx, channel: discord.TextChannel = None):
+		embed = discord.Embed(
+			color=discord.Color.green()
+		)
 		channel = channel or ctx.channel
 		count = 0
 		async for _ in channel.history(limit=None):
 			count += 1
-		await ctx.send(f'There are {count} messages in {channel.mention}')
+		embed.add_field(
+			name=channel,
+			value=str(count),
+			inline=True
+	    )
+		embed.set_image(url='https://imgur.com/gallery/K16VPM5')
+
+		await ctx.send(embed=embed)
 
 	@commands.command()
 	async def members(self, ctx):
