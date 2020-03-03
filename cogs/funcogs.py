@@ -132,12 +132,15 @@ class FunCommands(commands.Cog):
 		status = member.status
 		joined = member.joined_at
 		activity = member.activity
+		roles = member.roles
+		guild = member.guild
 		embed = discord.Embed(
 			color=discord.Color.red()
 		)
 		embed.add_field(
 			name=name,
-			value=f'joined: {joined}\nstatus: {status}\nactivity: {activity}'
+			value=f'joined: {joined}\nstatus: {status}\nactivity: {activity}\nroles: '
+			      f'{roles}\nguild: {guild}'
 		)
 		await ctx.send(embed=embed)
 
