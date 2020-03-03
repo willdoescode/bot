@@ -37,9 +37,8 @@ class Events(commands.Cog):
 					embed = discord.Embed(
 						color=discord.Color.green()
 					)
-					print(f'{self.bot.user.name} has connected to discord')
-		async for guild in self.bot.fetch_guilds(limit=150):
-			print(guild.name)
+					async for guilds in self.bot.fetch_guilds(limit=150):
+						print(f'{self.bot.user.name} has connected to {guilds.name} server')
 
 	@commands.Cog.listener()
 	async def on_member_join(self, member: discord.Member):
