@@ -149,7 +149,7 @@ class FunCommands(commands.Cog):
 			name=name,
 			value=f'joined: {joined}\nstatus: {status}\nactivity: {activity}'
 		)
-		ctx.send(embed=embed)
+		await ctx.send(embed=embed)
 
 
 def setup(bot):
