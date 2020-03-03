@@ -34,6 +34,9 @@ class Events(commands.Cog):
 						value='Has connected'
 					)
 					await channel.send(embed=embed)
+					embed = discord.Embed(
+						color=discord.Color.green()
+					)
 					print(f'{self.bot.user.name} has connected to discord')
 		async for guild in self.bot.fetch_guilds(limit=150):
 			print(guild.name)
