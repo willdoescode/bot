@@ -26,32 +26,19 @@ class Events(commands.Cog):
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)
-		channel = discord.utils.get(self.bot.get_all_channels(), name='logs')
-		embed.add_field(
-			name=f'{self.bot.user.name}',
-			value='Has connected'
-		)
-		await channel.send(embed=embed)
-		print(f'{self.bot.user.name} has connected to discord')
+		for guild in self.bot.guilds:
+			for channel in guild.text_channels:
+				if channel.name == 'logs':
+					embed.add_field(
+						name=f'{self.bot.user.name}',
+						value='Has connected'
+					)
+					await channel.send(embed=embed)
+					print(f'{self.bot.user.name} has connected to discord')
+				else:
+					break
 		async for guild in self.bot.fetch_guilds(limit=150):
 			print(guild.name)
-
-	@commands.Cog.listener()
-	async def on_member_join(self, ctx, member: discord.Member):
-		embed = discord.Embed(
-			color=discord.Color.green()
-		)
-		channel = discord.utils.get(self.bot.get_all_channels(), name='joins-and-leaves')
-		server = member.guild
-		channel = server.utils.get(self.bot.get_all_channels(), name='joins-and-leaves')
-		embed.add_field(
-			name='Welcome to the server:',
-			value=f'@{member}',
-			inline=False
-		)
-		await channel.send(embed=embed)
-		role = discord.utils.get(ctx.guild.roles, name='new player')
-		await member.add_roles(role)
 
 	@commands.Cog.listener()
 	async def on_member_remove(self, member):
