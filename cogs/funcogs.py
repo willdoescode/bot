@@ -2,7 +2,7 @@ from discord.ext import commands
 import discord
 import requests
 import random
-from googlesearch import search
+
 
 class FunCommands(commands.Cog):
 	def __init__(self, bot):
