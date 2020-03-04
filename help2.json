@@ -11,7 +11,5 @@
   ".giverole": "usage: .giverole muted @user, can be called by +role",
   ".removerole": "usage: .removerole muted @user, can be called by -role",
   ".embed": "creates embed",
-  ".nick": "allows mods to give nicknames",
-  ".meme": "gets some memes",
-  ".time": "gets the time"
+  ".nick": "allows mods to give nicknames"
 }
