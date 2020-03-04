@@ -155,8 +155,9 @@ class FunCommands(commands.Cog):
 		await ctx.send(embed=embed)
 
 	@commands.command()
-	async def nick(self, ctx, *, nickname: str):
-		await ctx.author.change_nickname(nickname=nickname)
+	@commands.has_permissions(administrator=True)
+	async def nick(self, ctx, member: discord.Member, *, nickname):
+		await member.edit(nick=nickname)
 		await ctx.send('Changed nick')
 
 

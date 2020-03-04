@@ -39,6 +39,9 @@ class ErrorCatch(commands.Cog):
 			logger.error(error)
 			await ctx.send('Coder is Stupid and Forgot to Await Something in the code')
 
+		elif isinstance(error, discord.ext.commands.errors.CommandInvokeError):
+			logger.error(error)
+
 
 def setup(bot):
 	bot.add_cog(ErrorCatch(bot))
