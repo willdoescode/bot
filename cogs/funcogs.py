@@ -4,6 +4,7 @@ import requests
 import random
 from datetime import datetime
 
+
 class FunCommands(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
