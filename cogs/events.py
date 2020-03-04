@@ -4,7 +4,7 @@ from discord.ext import (
 )
 from itertools import cycle
 import discord
-import json
+from datetime import datetime
 
 
 class Events(commands.Cog):
@@ -23,6 +23,7 @@ class Events(commands.Cog):
 
 	@commands.Cog.listener()
 	async def on_ready(self):
+		now = datetime.now()
 		self.big.start()
 		embed = discord.Embed(
 			color=discord.Color.green()
@@ -32,7 +33,7 @@ class Events(commands.Cog):
 				if channel.name == 'logs':
 					embed.add_field(
 						name=f'{self.bot.user.name}',
-						value='Has connected'
+						value=f'Has connected\ntime is {now.strftime("%H: %M: %S")}'
 					)
 					await channel.send(embed=embed)
 					embed = discord.Embed(
