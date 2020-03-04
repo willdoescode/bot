@@ -56,7 +56,7 @@ class ModCommands(commands.Cog):
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
-	async def mute(self, ctx, member: discord.Member = None, *, reason):
+	async def mute(self, ctx, member: discord.Member = None, *, reason: str = None):
 		role = discord.utils.get(ctx.guild.roles, name='muted')
 		await member.add_roles(role)
 		embed = discord.Embed(
@@ -74,7 +74,37 @@ class ModCommands(commands.Cog):
 	async def unmute(self, ctx, member: discord.Member = None):
 		role = discord.utils.get(ctx.guild.roles, name='muted')
 		await member.remove_roles(role)
-		await ctx.send(f'@{member} has been unmuted by {ctx.author}')
+		embed = discord.Embed(
+			color=discord.Color.green()
+		)
+		embed.add_field(
+			name=f'{member.display_name}',
+			value=f'has been unmuted by {ctx.author}',
+			inline=True
+		)
+		await ctx.send(embed=embed)
+
+	@commands.command()
+	@commands.has_permissions(administrator=True)
+	async def give_role(self, ctx, role, member: discord.Member = None):
+		role = discord.utils.get(ctx.guild.roles, name=role)
+		embed = discord.Embed(
+			color=discord.Color.green()
+		)
+		try:
+			await member.add_roles(role)
+			embed.add_field(
+				name=f'{member.display_name}',
+				value=f'has been given the {role} role',
+				inline=True
+			)
+			await ctx.send(embed=embed)
+		except:
+			embed = discord.Embed(
+				color=discord.Color.red()
+			)
+			embed.add_field(name=f'{role} is Not a Valid Role')
+			await ctx.send(embed=embed)
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
