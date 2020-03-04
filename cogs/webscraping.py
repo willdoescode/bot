@@ -5,7 +5,8 @@ import praw
 from configparser import ConfigParser
 import tweepy
 from imgurpython import ImgurClient
-from googlesearch import search
+import time
+import random
 
 config = ConfigParser()
 config.read('configs.ini')
@@ -195,10 +196,36 @@ class WebScraping(commands.Cog):
 			a = y.author
 			embed.add_field(
 				name=f'{count}: @{a.screen_name}',
-				value=f'{tweet.text}\nhttps://twitter.com/{tweet.user.screen_name}/status/{tweet.id}',
+				value=f'{tweet.text}\nhttps://twitter.com/{tweet.user.screen_name}/status/'
+				      f'{tweet.id}',
 				inline=True
 			)
 			count += 1
+		await ctx.send(embed=embed)
+
+	@commands.command()
+	async def meme(self, ctx):
+		LIMIT_POST = 5
+
+		subreddit = self.reddit.subreddit('dankmemes')
+		new_submissions = subreddit.new(limit=LIMIT_POST)
+
+		current_time = int(time.time())
+
+		posts = []
+
+		for submission in new_submissions:
+			sub_age = ((current_time - submission.created_utc) / 60 / 60 / 24)
+			if sub_age < 1:
+				posts.append(submission)
+
+		random_number = random.randint(0, LIMIT_POST - 1)
+
+		random_post = posts[random_number]
+		embed = discord.Embed(
+			color=discord.Color.orange()
+		)
+		embed.set_image(url=random_post.url)
 		await ctx.send(embed=embed)
 
 
