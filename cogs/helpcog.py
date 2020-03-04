@@ -13,8 +13,8 @@ class Help(commands.Cog):
 		with open('help.json') as f:
 			help_commands = json.load(f)
 
-		with open('help2.json') as f:
-			help2_commands = json.load(f)
+		with open('help1.json') as f:
+			help1_commands = json.load(f)
 
 		alsoembed = discord.Embed(
 			color=discord.Color.orange()
@@ -31,7 +31,7 @@ class Help(commands.Cog):
 		for name, value in help_commands.items():
 			embed.add_field(name=name, value=value, inline=True)
 
-		for names, values in help2_commands.items():
+		for names, values in help1_commands.items():
 			alsoembed.add_field(name=names, value=values, inline=True)
 		person = ctx.author
 		await person.send(embed=embed)
