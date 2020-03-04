@@ -84,7 +84,7 @@ class ModCommands(commands.Cog):
 		)
 		await ctx.send(embed=embed)
 
-	@commands.command()
+	@commands.command(aliases=['+role'])
 	@commands.has_permissions(administrator=True)
 	async def giverole(self, ctx, role=None, member: discord.Member = None):
 		roles = discord.utils.get(ctx.guild.roles, name=role)
@@ -99,7 +99,7 @@ class ModCommands(commands.Cog):
 		)
 		await ctx.send(embed=embed)
 
-	@commands.command()
+	@commands.command(aliases=['-role'])
 	@commands.has_permissions(administrator=True)
 	async def removerole(self, ctx,  role=None, member: discord.Member = None):
 		roles = discord.utils.get(ctx.guild.roles, name=role)
