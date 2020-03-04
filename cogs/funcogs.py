@@ -154,6 +154,9 @@ class FunCommands(commands.Cog):
 		embed.add_field(name=ctx.author, value=message, inline=True)
 		await ctx.send(embed=embed)
 
-
+	@commands.command()
+	async def nick(self, ctx, *, nickname: str):
+		await self.bot.change_nickname(ctx.author, nickname=nickname)
+		await ctx.send('Changed nick')
 def setup(bot):
 	bot.add_cog(FunCommands(bot))

@@ -3,15 +3,20 @@
     <words>
       <w>alsoembed</w>
       <w>asctime</w>
+      <w>bestaudio</w>
       <w>cmessage</w>
       <w>coinflip</w>
       <w>discordkey</w>
+      <w>fmpeg</w>
       <w>getreddit</w>
       <w>giverole</w>
       <w>hashtag</w>
       <w>imgur</w>
       <w>levelname</w>
       <w>modmodmod</w>
+      <w>postprocessors</w>
+      <w>preferredcodec</w>
+      <w>preferredquality</w>
       <w>reddit</w>
       <w>removerole</w>
       <w>showerthought</w>
