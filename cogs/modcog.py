@@ -48,7 +48,7 @@ class ModCommands(commands.Cog):
 		)
 		await member.kick(reason=reason)
 		embed.add_field(
-			name=f'{member}',
+			name=f'{member.display_name}',
 			value=f'has been kicked for: {reason} by: {ctx.author}',
 			inline=True
 		)
@@ -57,22 +57,18 @@ class ModCommands(commands.Cog):
 	@commands.command()
 	@commands.has_permissions(administrator=True)
 	async def mute(self, ctx, member: discord.Member = None):
-		if not member:
-			await ctx.send('Please enter a member')
-			return
-		role = discord.utils.get(ctx.guild.roles, name='muted')
+		server = member.guild
+		role = server.utils.get(ctx.guild.roles, name='muted')
 		await member.add_roles(role)
-		await ctx.send(f'@{member} has been muted by @{ctx.author}')
+		await ctx.send(f'@{member} has been muted by {ctx.author}')
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
 	async def unmute(self, ctx, member: discord.Member = None):
-		if not member:
-			await ctx.send('Please enter a member')
-			return
-		role = discord.utils.get(ctx.guild.roles, name='muted')
+		server = member.guild
+		role = server.utils.get(ctx.guild.roles, name='muted')
 		await member.remove_roles(role)
-		await ctx.send(f'@{member} has been unmuted by @{ctx.author}')
+		await ctx.send(f'@{member} has been unmuted by {ctx.author}')
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
