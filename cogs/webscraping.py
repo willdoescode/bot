@@ -201,11 +201,6 @@ class WebScraping(commands.Cog):
 			count += 1
 		await ctx.send(embed=embed)
 
-	@commands.command()
-	async def google(self, ctx, *, query, amount: int = None):
-		for result in search(query=query, tld="google.com", num=amount, stop=1, pause=2):
-			await ctx.send(result)
-
 
 def setup(bot):
 	bot.add_cog(WebScraping(bot))
