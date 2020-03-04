@@ -86,7 +86,7 @@ class ModCommands(commands.Cog):
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
-	async def give_role(self, ctx, role, member: discord.Member = None):
+	async def giverole(self, ctx, role, member: discord.Member = None):
 		role = discord.utils.get(ctx.guild.roles, name=role)
 		embed = discord.Embed(
 			color=discord.Color.green()
