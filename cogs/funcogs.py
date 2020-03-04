@@ -71,12 +71,13 @@ class FunCommands(commands.Cog):
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)
-		if 'bit.ly' in link:
-			embed.add_field(name=f'Link: {link}', value=f'Expanded: {requests.get(link).url}',
-			                inline=True)
-			await ctx.send(embed=embed)
-		else:
-			await ctx.send('Please enter a valid bit.ly link')
+
+		embed.add_field(
+			name=f'Link: {link}',
+			value=f'Expanded: {requests.get(link).url}',
+			inline=True
+		)
+		await ctx.send(embed=embed)
 
 	@commands.command()
 	async def coinflip(self, ctx):
