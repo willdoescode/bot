@@ -5,6 +5,7 @@ import praw
 from configparser import ConfigParser
 import tweepy
 from imgurpython import ImgurClient
+from googlesearch import search
 
 config = ConfigParser()
 config.read('configs.ini')
@@ -199,6 +200,11 @@ class WebScraping(commands.Cog):
 			)
 			count += 1
 		await ctx.send(embed=embed)
+
+	@commands.command()
+	async def google(self, ctx, *, query, amount: int = None):
+		for result in search(query=query, tld="google.com", num=amount, stop=1, pause=2):
+			await ctx.send(result)
 
 
 def setup(bot):
