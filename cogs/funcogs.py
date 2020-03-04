@@ -157,8 +157,15 @@ class FunCommands(commands.Cog):
 	@commands.command()
 	@commands.has_permissions(administrator=True)
 	async def nick(self, ctx, member: discord.Member, *, nickname):
+		embed = discord.Embed(
+			color=discord.Color.purple()
+		)
+		embed.add_field(
+			name=member.display_name,
+			value=f'Has been changed to {nickname}'
+		)
 		await member.edit(nick=nickname)
-		await ctx.send('Changed nick')
+		await ctx.send(embed=embed)
 
 
 def setup(bot):
