@@ -169,7 +169,7 @@ class FunCommands(commands.Cog):
 	@commands.command()
 	async def time(self, ctx):
 		now = datetime.now()
-		current_time = now.strftime("%H:%M:")
+		current_time = now.strftime("%H:%M")
 		await ctx.send(f'Time: {current_time}')
 
 
