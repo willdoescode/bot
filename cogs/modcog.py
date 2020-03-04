@@ -86,25 +86,32 @@ class ModCommands(commands.Cog):
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
-	async def giverole(self, ctx, role, member: discord.Member = None):
-		role = discord.utils.get(ctx.guild.roles, name=role)
+	async def giverole(self, ctx, role=None, member: discord.Member = None):
+		roles = discord.utils.get(ctx.guild.roles, name=role)
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)
-		try:
-			await member.add_roles(role)
-			embed.add_field(
-				name=f'{member.display_name}',
-				value=f'has been given the {role} role',
-				inline=True
-			)
-			await ctx.send(embed=embed)
-		except:
-			embed = discord.Embed(
-				color=discord.Color.red()
-			)
-			embed.add_field(name=f'{role} is Not a Valid Role')
-			await ctx.send(embed=embed)
+		await member.add_roles(roles)
+		embed.add_field(
+			name=f'{member.display_name}',
+			value=f'has been given the {roles} role',
+			inline=True
+		)
+		await ctx.send(embed=embed)
+
+	@commands.command()
+	@commands.has_permissions(administrator=True)
+	async def removerole(self, ctx,  role=None, member: discord.Member = None):
+		roles = discord.utils.get(ctx.guild.roles, name=role)
+		await member.remove_roles(roles)
+		embed = discord.Embed(
+			color=discord.Color.red()
+		)
+		embed.add_field(
+			name=f'{member.display_name}',
+			value=f'Has has {roles} role removed'
+		)
+		await ctx.send(embed=embed)
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
