@@ -109,7 +109,7 @@ class ModCommands(commands.Cog):
 		)
 		embed.add_field(
 			name=f'{member.display_name}',
-			value=f'Has has {roles} role removed'
+			value=f'Has had {roles} role removed'
 		)
 		await ctx.send(embed=embed)
 
