@@ -9,5 +9,8 @@
   ".connected_servers": "shows list of connected servers",
   ".getinfo": "gets info on a user",
   ".giverole": "usage: .giverole muted @user, can be called by +role",
-  ".removerole": "usage: .removerole muted @user, can be called by -role"
+  ".removerole": "usage: .removerole muted @user, can be called by -role",
+  ".embed": "creates embed",
+  ".nick": "allows mods to give nicknames",
+  ".time": "gives the time"
 }
