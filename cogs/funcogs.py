@@ -156,7 +156,9 @@ class FunCommands(commands.Cog):
 
 	@commands.command()
 	async def nick(self, ctx, *, nickname: str):
-		await self.bot.change_nickname(ctx.author, nickname=nickname)
+		await ctx.author.change_nickname(nickname=nickname)
 		await ctx.send('Changed nick')
+
+
 def setup(bot):
 	bot.add_cog(FunCommands(bot))
