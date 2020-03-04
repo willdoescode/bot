@@ -2,7 +2,7 @@ from discord.ext import commands
 import discord
 import requests
 import random
-
+from datetime import datetime
 
 class FunCommands(commands.Cog):
 	def __init__(self, bot):
@@ -146,7 +146,6 @@ class FunCommands(commands.Cog):
 		await ctx.send(embed=embed)
 
 	@commands.command(aliases=['embed'])
-	@commands.has_permissions(manage_messages=True)
 	async def em(self, ctx, *, message: str):
 		embed = discord.Embed(
 			color=discord.Color.green()
@@ -166,6 +165,12 @@ class FunCommands(commands.Cog):
 		)
 		await member.edit(nick=nickname)
 		await ctx.send(embed=embed)
+
+	@commands.command()
+	async def time(self, ctx):
+		now = datetime.now()
+		current_time = now.strftime("%H:%M:")
+		await ctx.send(f'Time: {current_time}')
 
 
 def setup(bot):
