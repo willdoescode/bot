@@ -1,0 +1,17 @@
+{
+  ".trending": "gets trending tweets",
+  ".synonym": "gets alike words",
+  ".antonym": "gets unalike words",
+  ".members": "gets the amount of members",
+  ".warn": "warns users",
+  ".give_role": "allows for the giving of roles",
+  ".cmessage": "shows total messages in channel",
+  ".connected_servers": "shows list of connected servers",
+  ".getinfo": "gets info on a user",
+  ".giverole": "usage: .giverole muted @user, can be called by +role",
+  ".removerole": "usage: .removerole muted @user, can be called by -role",
+  ".embed": "creates embed",
+  ".nick": "allows mods to give nicknames",
+  ".meme": "gets memes",
+  ".time": "gets the time"
+}
