@@ -36,6 +36,7 @@ class Help(commands.Cog):
 		person = ctx.author
 		await person.send(embed=embed)
 		await person.send(embed=alsoembed)
+		await ctx.send('Sent help to your dms! :thumbsup:')
 
 
 def setup(bot):
