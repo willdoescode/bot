@@ -56,17 +56,23 @@ class ModCommands(commands.Cog):
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
-	async def mute(self, ctx, member: discord.Member = None):
-		server = member.guild
-		role = server.utils.get(ctx.guild.roles, name='muted')
+	async def mute(self, ctx, member: discord.Member = None, *, reason):
+		role = discord.utils.get(ctx.guild.roles, name='muted')
 		await member.add_roles(role)
-		await ctx.send(f'@{member} has been muted by {ctx.author}')
+		embed = discord.Embed(
+			color=discord.Color.red()
+		)
+		embed.add_field(
+			name=f'{member.display_name}',
+			value=f'has been muted by {ctx.author} for {reason}',
+			inline=True
+		)
+		await ctx.send(embed=embed)
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
 	async def unmute(self, ctx, member: discord.Member = None):
-		server = member.guild
-		role = server.utils.get(ctx.guild.roles, name='muted')
+		role = discord.utils.get(ctx.guild.roles, name='muted')
 		await member.remove_roles(role)
 		await ctx.send(f'@{member} has been unmuted by {ctx.author}')
 
