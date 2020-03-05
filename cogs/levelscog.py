@@ -43,6 +43,12 @@ class Level(commands.Cog):
 	async def level(self, ctx, member: discord.Member = None):
 		member = ctx.author if not member else member
 		member_id = str(member.id)
+		if not member:
+			value = f"{self.users[str(ctx.author.id)]['level']}/" \
+			        f"{4 * (self.users[str(ctx.author.id)] ** 3) / 5}"
+		else:
+			value = f"{self.users[member_id]['level']}/" \
+			        f"{4 * (self.users[member_id] ** 3) / 5}"
 
 		if member_id not in self.users:
 			await ctx.send('Member doesnt have a level')
@@ -54,7 +60,10 @@ class Level(commands.Cog):
 			)
 			em.set_author(name=f'Level - {member}', icon_url=ctx.author.avatar_url)
 			em.add_field(name="Level", value=self.users[member_id]['level'] - 1)
-			em.add_field(name="XP", value=self.users[member_id]['exp'])
+			em.add_field(
+				name="XP",
+				value=value
+			)
 			await ctx.send(embed=em)
 
 
