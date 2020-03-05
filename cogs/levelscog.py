@@ -65,7 +65,7 @@ class Level(commands.Cog):
 		)
 		embed.set_author(name='ScoreBoard', icon_url=self.bot.user.avatar_url)
 		for ids in self.users:
-			name = self.bot.get_user(ids)
+			name = self.bot.get_user(int(ids))
 			embed.add_field(
 				name=f'{name}',
 				value=f"Level: {self.users[ids]['level'] - 1}",
