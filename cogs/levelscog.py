@@ -46,9 +46,12 @@ class Level(commands.Cog):
 		if not member:
 			value = f"{self.users[str(ctx.author.id)]['level']}/" \
 			        f"{4 * (self.users[str(ctx.author.id)] ** 3) / 5}"
+			icon_url = ctx.author.avatar_url
+			member_id = str(ctx.author.id)
 		else:
 			value = f"{self.users[member_id]['level']}/" \
 			        f"{4 * (self.users[member_id] ** 3) / 5}"
+			icon_url = member.avatar_url
 
 		if member_id not in self.users:
 			await ctx.send('Member doesnt have a level')
@@ -58,7 +61,7 @@ class Level(commands.Cog):
 				color=member.color,
 				timestamp=ctx.message.created_at
 			)
-			em.set_author(name=f'Level - {member}', icon_url=ctx.author.avatar_url)
+			em.set_author(name=f'Level - {member}', icon_url=icon_url)
 			em.add_field(name="Level", value=self.users[member_id]['level'] - 1)
 			em.add_field(
 				name="XP",
