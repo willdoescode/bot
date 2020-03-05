@@ -46,7 +46,8 @@ class Level(commands.Cog):
 
 		if member_id not in self.users:
 			await ctx.send('Member doesnt have a level')
-		else:
+
+		elif member_id in self.users:
 			embed = discord.Embed(
 				color=member.color,
 				timestamp=ctx.message.created_at
@@ -54,7 +55,6 @@ class Level(commands.Cog):
 			embed.set_author(name=f'Level - {member}', icon_url=self.bot.user.avatar_url)
 			embed.add_field(name="Level", value=self.users[member_id]['level'])
 			embed.add_field(name="XP", value=self.users[member_id]['exp'])
-
 			await ctx.send(embed=embed)
 
 
