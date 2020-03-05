@@ -5,6 +5,7 @@ from discord.ext import (
 from itertools import cycle
 import discord
 from datetime import datetime
+import json
 
 
 class Events(commands.Cog):
@@ -43,7 +44,7 @@ class Events(commands.Cog):
 			print(f'{self.bot.user.name} bot has connected to {guilds.name} server')
 
 	@commands.Cog.listener()
-	async def on_member_join(self, member: discord.Member):
+	async def on_member_join(self, member):
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)

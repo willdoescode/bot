@@ -13,5 +13,6 @@
   ".embed": "creates embed",
   ".nick": "allows mods to give nicknames",
   ".meme": "gets memes",
-  ".time": "gets the time"
+  ".time": "gets the time",
+  ".level": "gets your level"
 }

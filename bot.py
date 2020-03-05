@@ -16,7 +16,8 @@ extensions = [
 	'cogs.events',
 	'cogs.helpcog',
 	'cogs.chatmanage',
-	'cogs.math'
+	'cogs.math',
+	'cogs.levelscog'
 ]
 if __name__ == '__main__':
 	for ext in extensions:
@@ -25,5 +26,17 @@ if __name__ == '__main__':
 			print(f'Loaded {ext}')
 		except:
 			print(f'{ext} Failed to load')
+
+
+	@client.command()
+	@commands.has_permissions(manage_messages=True)
+	async def reload(ctx):
+		for extension in extensions:
+			try:
+				client.unload_extension(extension)
+				await ctx.send(f'Reloading {extension}')
+				client.load_extension(extension)
+			except:
+				await ctx.send(f'failed to reload {extension} extension')
 
 client.run(config['discord']['key'])
