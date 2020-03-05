@@ -27,8 +27,8 @@ class Events(commands.Cog):
 			color=discord.Color.green()
 		)
 		await self.bot.change_presence(
-			activity=discord.ActivityType.custom(
-				'Committing acts of discord bot'
+			activity=discord.Activity.name(
+				name='Committing acts of discord bot'
 			)
 		)
 		embed.set_author(name='Log', icon_url=self.bot.user.avatar_url)
