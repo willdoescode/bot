@@ -150,7 +150,7 @@ class ModCommands(commands.Cog):
 		)
 		embed.set_author(name='WARNING', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
-			name='.',
+			name=' ',
 			value=f'@{member} has been warned for: {reason}',
 			inline=True
 		)

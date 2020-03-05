@@ -187,10 +187,10 @@ class WebScraping(commands.Cog):
 
 	@commands.command()
 	async def meme(self, ctx):
-		LIMIT_POST = 5
+		post_limit = 20
 
 		subreddit = self.reddit.subreddit('dankmemes')
-		new_submissions = subreddit.new(limit=LIMIT_POST)
+		new_submissions = subreddit.new(limit=post_limit)
 
 		current_time = int(time.time())
 
@@ -201,7 +201,7 @@ class WebScraping(commands.Cog):
 			if sub_age < 1:
 				posts.append(submission)
 
-		random_number = random.randint(0, LIMIT_POST - 1)
+		random_number = random.randint(0, post_limit - 1)
 
 		random_post = posts[random_number]
 		embed = discord.Embed(
