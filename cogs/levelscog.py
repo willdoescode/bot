@@ -53,7 +53,7 @@ class Level(commands.Cog):
 				timestamp=ctx.message.created_at
 			)
 			em.set_author(name=f'Level - {member}', icon_url=ctx.author.avatar_url)
-			em.add_field(name="Level", value=self.users[member_id]['level'])
+			em.add_field(name="Level", value=self.users[member_id]['level'] - 1)
 			em.add_field(name="XP", value=self.users[member_id]['exp'])
 			await ctx.send(embed=em)
 
