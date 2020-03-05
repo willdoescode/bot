@@ -63,7 +63,7 @@ class Level(commands.Cog):
 			color=discord.Color.purple(),
 			timestamp=ctx.message.created_at
 		)
-		embed.set_author(name='ScoreBoard', icon_url=self.bot.avatar_url)
+		embed.set_author(name='ScoreBoard', icon_url=self.bot.user.avatar_url)
 		for ids in self.users:
 			embed.add_field(
 				name=f'{ids.mention}',
