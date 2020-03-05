@@ -5,6 +5,16 @@ import discord
 class ChatManage(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
+		self.extensions = extensions = [
+			'cogs.errorcatch',
+			'cogs.webscraping',
+			'cogs.funcogs',
+			'cogs.modcog',
+			'cogs.events',
+			'cogs.helpcog',
+			'cogs.chatmanage',
+			'cogs.math'
+		]
 
 	@commands.command()
 	@commands.has_permissions(manage_messages=True)
