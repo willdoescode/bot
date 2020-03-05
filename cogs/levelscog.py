@@ -57,6 +57,15 @@ class Level(commands.Cog):
 
 			await ctx.send(embed=embed)
 
+	@commands.command()
+	async def scoreboard(self, ctx):
+		embed = discord.Embed(
+			color=ctx.author.color,
+			timestamp=ctx.message.created_at
+		)
+		for ids in self.users:
+			print(ids)
+
 
 def setup(bot):
 	bot.add_cog(Level(bot))
