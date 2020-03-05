@@ -13,5 +13,5 @@
   ".meme": "gets memes",
   ".time": "gets the time",
   ".level": "gets your level",
-  ".ranks": "gets leaderboard for levels"
+  ".lb": "gets leaderboard for levels. aliases=.leaderboard"
 }
