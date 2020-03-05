@@ -56,7 +56,6 @@ class Level(commands.Cog):
 			embed.add_field(name="XP", value=self.users[member_id]['exp'])
 
 			await ctx.send(embed=embed)
-			print('ok')
 
 
 def setup(bot):
