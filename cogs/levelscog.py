@@ -57,8 +57,8 @@ class Level(commands.Cog):
 
 			await ctx.send(embed=embed)
 
-	@commands.command()
-	async def rank(self, ctx):
+	@commands.command(aliases=['lb'])
+	async def leaderboard(self, ctx):
 		embed = discord.Embed(
 			color=discord.Color.purple(),
 			timestamp=ctx.message.created_at

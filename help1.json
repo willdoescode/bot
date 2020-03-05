@@ -14,5 +14,6 @@
   ".nick": "allows mods to give nicknames",
   ".meme": "gets memes",
   ".time": "gets the time",
-  ".level": "gets your level"
+  ".level": "gets your level",
+  ".ranks": "gets leaderboard for levels"
 }
