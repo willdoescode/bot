@@ -69,7 +69,7 @@ class Level(commands.Cog):
 			embed.add_field(
 				name=f'{name}',
 				value=f"Level: {self.users[ids]['level'] - 1}",
-				inline=False
+				inline=True
 			)
 		await ctx.send(embed=embed)
 

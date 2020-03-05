@@ -55,7 +55,7 @@ class Events(commands.Cog):
 			for channel in server.text_channels:
 				if channel.name == 'joins-and-leaves':
 					embed.add_field(
-						name=' ',
+						name='. ',
 						value=member.display_name
 					)
 					await channel.send(embed=embed)
