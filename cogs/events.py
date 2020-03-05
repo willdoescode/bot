@@ -22,8 +22,8 @@ class Events(commands.Cog):
 			color=discord.Color.green()
 		)
 		await self.bot.change_presence(
-			activity=discord.ActivityType.watching,
-			name='over you'
+			activity=discord.ActivityType.watching(),
+			game='over you'
 		)
 		embed.set_author(name='Log', icon_url=self.bot.user.avatar_url)
 		for guild in self.bot.guilds:
