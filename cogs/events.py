@@ -19,7 +19,8 @@ class Events(commands.Cog):
 	async def big(self):
 		await self.bot.change_presence(
 			activity=next(self.status),
-			status=discord.Status.idle
+			status=discord.Status.idle,
+			afk=False
 		)
 
 	@commands.Cog.listener()
