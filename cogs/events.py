@@ -15,7 +15,7 @@ class Events(commands.Cog):
 		                    'with fire', 'with your feeling', 'on my own', 'a song',
 		                     'with bot things', 'oil changing simulator'])
 
-	@tasks.loop(seconds=2)
+	@tasks.loop(seconds=1)
 	async def big(self):
 		await self.bot.change_presence(
 			status=discord.Status.idle,
