@@ -18,7 +18,8 @@ class Events(commands.Cog):
 	@tasks.loop(seconds=2)
 	async def big(self):
 		await self.bot.change_presence(
-			activity=next(self.status)
+			activity=next(self.status),
+			status=discord.Status.idle
 		)
 
 	@commands.Cog.listener()
