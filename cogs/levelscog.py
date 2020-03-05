@@ -43,31 +43,34 @@ class Level(commands.Cog):
 	async def level(self, ctx, member: discord.Member = None):
 		member = ctx.author if not member else member
 		member_id = str(member.id)
-		if not member:
-			value = f"{self.users[str(ctx.author.id)]['level']}/" \
-			        f"{4 * (self.users[str(ctx.author.id)] ** 3) / 5}"
-			icon_url = ctx.author.avatar_url
-			member_id = str(ctx.author.id)
-		else:
-			value = f"{self.users[member_id]['level']}/" \
-			        f"{4 * (self.users[member_id] ** 3) / 5}"
-			icon_url = member.avatar_url
 
 		if member_id not in self.users:
 			await ctx.send('Member doesnt have a level')
-
-		elif member_id in self.users:
-			em = discord.Embed(
+		else:
+			embed = discord.Embed(
 				color=member.color,
 				timestamp=ctx.message.created_at
 			)
-			em.set_author(name=f'Level - {member}', icon_url=icon_url)
-			em.add_field(name="Level", value=self.users[member_id]['level'] - 1)
-			em.add_field(
-				name="XP",
-				value=value
+			embed.set_author(name=f'Level - {member}', icon_url=self.bot.user.avatar_url)
+			embed.add_field(name="Level", value=self.users[member_id]['level'] - 1)
+			embed.add_field(name="XP", value=self.users[member_id]['exp'])
+
+			await ctx.send(embed=embed)
+
+	@commands.command()
+	async def rank(self, ctx):
+		embed = discord.Embed(
+			color=discord.Color.purple(),
+			timestamp=ctx.message.created_at
+		)
+		embed.set_author(name='ScoreBoard', icon_url=self.bot.avatar_url)
+		for ids in self.users:
+			embed.add_field(
+				name=f'{ids.mention}',
+				value=f"Level: {self.users[ids]['level'] - 1}",
+				inline=False
 			)
-			await ctx.send(embed=em)
+		await ctx.send(embed=embed)
 
 
 def setup(bot):
