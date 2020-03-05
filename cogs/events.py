@@ -15,16 +15,18 @@ class Events(commands.Cog):
 		                              'with fire', 'with your feeling', 'on my own', 'a song',
 		                              'with bot things', 'oil changing simulator'])
 
+	@tasks.loop(seconds=2)
+	async def big(self):
+		await self.bot.change_presence(
+			activity=next(self.status)
+		)
+
 	@commands.Cog.listener()
 	async def on_ready(self):
 		now = datetime.now()
+		self.big.start()
 		embed = discord.Embed(
 			color=discord.Color.green()
-		)
-		await self.bot.change_presence(
-			activity=discord.ActivityType.custom(
-				name='watching over you'
-			)
 		)
 		embed.set_author(name='Log', icon_url=self.bot.user.avatar_url)
 		for guild in self.bot.guilds:
