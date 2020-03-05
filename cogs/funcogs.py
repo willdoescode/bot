@@ -8,7 +8,7 @@ from datetime import datetime
 class FunCommands(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-		self.responses = responses = [
+		self.responses = [
 			'It is certain.',
 			'It is decidedly so.',
 			'Without a doubt.',
@@ -25,7 +25,7 @@ class FunCommands(commands.Cog):
 			'Concentrate and ask again.',
 			'Very doubtful.'
 		]
-		self.jokes = jokes = [
+		self.jokes = [
 			'Light travels faster than sound. That\'s why some people appear bright until you hear them '
 			'speak',
 			'I was wondering why the ball was getting bigger. Then it hit me',
