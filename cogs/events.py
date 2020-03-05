@@ -29,6 +29,7 @@ class Events(commands.Cog):
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)
+		embed.set_author(name='Log', icon_url=self.bot.user.avatar_url)
 		for guild in self.bot.guilds:
 			for channel in guild.text_channels:
 				if channel.name == 'logs':
@@ -48,12 +49,13 @@ class Events(commands.Cog):
 		embed = discord.Embed(
 			color=discord.Color.green()
 		)
+		embed.set_author(name='Welcome to the server', icon_url=self.bot.user.avatar_url)
 		server = member.guild
 		try:
 			for channel in server.text_channels:
 				if channel.name == 'joins-and-leaves':
 					embed.add_field(
-						name='Welcome To The Server',
+						name='',
 						value=member.display_name
 					)
 					await channel.send(embed=embed)

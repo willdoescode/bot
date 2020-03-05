@@ -1,7 +1,5 @@
 {
   ".trending": "gets trending tweets",
-  ".synonym": "gets alike words",
-  ".antonym": "gets unalike words",
   ".members": "gets the amount of members",
   ".warn": "warns users",
   ".give_role": "allows for the giving of roles",

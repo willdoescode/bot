@@ -57,10 +57,12 @@ class FunCommands(commands.Cog):
 	async def pun(self, ctx):
 		joke = random.choice(self.jokes)
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Joke', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
-			name='Joke',
+			name='',
 			value=f'{joke}',
 			inline=False
 		)
@@ -69,11 +71,12 @@ class FunCommands(commands.Cog):
 	@commands.command()
 	async def expand(self, ctx, link):
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
-
+		embed.set_author(name='Link', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
-			name=f'Link: {link}',
+			name=f'{link}',
 			value=f'Expanded: {requests.get(link).url}',
 			inline=True
 		)
@@ -82,11 +85,13 @@ class FunCommands(commands.Cog):
 	@commands.command()
 	async def coinflip(self, ctx):
 		embed = discord.Embed(
-			color=discord.Color.purple()
+			color=discord.Color.purple(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Coin says:', icon_url=self.bot.user.avatar_url)
 		ok = ['heads', 'tails']
 		embed.add_field(
-			name='Coin Says:',
+			name='',
 			value=f'{random.choice(ok)}',
 			inline=False
 		)
@@ -99,14 +104,16 @@ class FunCommands(commands.Cog):
 	@commands.command(aliases=['pfp'])
 	async def avatar(self, ctx, member: discord.Member):
 		show_avatar = discord.Embed(
-			color=discord.Color.dark_red()
+			color=discord.Color.dark_red(),
+			timestamp=ctx.message.created_at
 		)
+		show_avatar.set_author(name='Avatar', icon_url=self.bot.user.avatar_url)
 		show_avatar.set_image(
 			url=member.avatar_url
 		)
 		show_avatar.add_field(
 			name=member.display_name,
-			value='Avatar',
+			value='',
 			inline=True
 		)
 		await ctx.send(embed=show_avatar)
@@ -119,8 +126,10 @@ class FunCommands(commands.Cog):
 	@commands.command(aliases=['8ball'])
 	async def _8ball(self, ctx, *, question):
 		embed = discord.Embed(
-			color=discord.Color.purple()
+			color=discord.Color.purple(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name=' Magic 8ball', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
 			name=f'{ctx.author} has asked: {question}',
 			value=f'Answer: {random.choice(self.responses)}',
@@ -137,8 +146,10 @@ class FunCommands(commands.Cog):
 		roles = member.roles
 		guild = member.guild
 		embed = discord.Embed(
-			color=discord.Color.red()
+			color=discord.Color.red(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='User Info', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
 			name=name,
 			value=f'joined: {joined}\nstatus: {status}\nactivity: {activity}\nroles: '
@@ -150,8 +161,10 @@ class FunCommands(commands.Cog):
 	@commands.command(aliases=['embed'])
 	async def em(self, ctx, *, message: str):
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Embed Created', icon_url=self.bot.user.avatar_url)
 		embed.add_field(name=ctx.author, value=message, inline=True)
 		await ctx.send(embed=embed)
 
@@ -159,8 +172,10 @@ class FunCommands(commands.Cog):
 	@commands.has_permissions(administrator=True)
 	async def nick(self, ctx, member: discord.Member, *, nickname):
 		embed = discord.Embed(
-			color=discord.Color.purple()
+			color=discord.Color.purple(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Nickname', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
 			name=member.display_name,
 			value=f'Has been changed to {nickname}'

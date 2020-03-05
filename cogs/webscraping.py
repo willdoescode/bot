@@ -40,45 +40,21 @@ class WebScraping(commands.Cog):
 	async def define(self, ctx, word: str):
 		mean = self.dictionary.meaning(word)
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Definition', icon_url=self.bot.user.avatar_url)
 		for name, value in mean.items():
 			embed.add_field(name=name, value=value, inline=True)
 		await ctx.send(embed=embed)
 
 	@commands.command()
-	async def synonym(self, ctx, word):
-		embed = discord.Embed(
-			color=discord.Color.green()
-		)
-		syn = self.dictionary.synonym(word)
-		for key, value in syn.items():
-			embed.add_field(
-				name=f'{key}',
-				value=f'{value}',
-				inline=True
-			)
-		await ctx.send(embed=embed)
-
-	@commands.command()
-	async def antonym(self, ctx, word):
-		embed = discord.Embed(
-			color=discord.Color.green()
-		)
-		syn = self.dictionary.antonym(word)
-		for key, value in syn.items():
-			embed.add_field(
-				name=f'{key}',
-				value=f'{value}',
-				inline=True
-			)
-		await ctx.send(embed=embed)
-
-	@commands.command()
 	async def showerthought(self, ctx, rank='hot', value: int = 1):
 		embed = discord.Embed(
-			color=discord.Color.dark_orange()
+			color=discord.Color.dark_orange(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Showerthought', icon_url=self.bot.user.avatar_url)
 		count = 1
 		if value < 10:
 			if rank == 'new':
@@ -134,8 +110,10 @@ class WebScraping(commands.Cog):
 	async def imgur(self, ctx):
 		front_page = self.imgur_bot.gallery()
 		embed = discord.Embed(
-			color=discord.Color.orange()
+			color=discord.Color.orange(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Imgur', icon_url=self.bot.user.avatar_url)
 		count = 1
 		for item in front_page:
 			embed.add_field(name=f'{count}', value=f'{item.link}\nviewed {item.views} times',
@@ -149,14 +127,16 @@ class WebScraping(commands.Cog):
 	async def getreddit(self, ctx, sub='teenagers', rank='top', value=1):
 		subreddit = self.reddit.subreddit(str(sub))
 		embed = discord.Embed(
-			color=discord.Color.dark_green()
+			color=discord.Color.dark_green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Reddit', icon_url=self.bot.user.avatar_url)
 		count = 1
 		if rank == 'top':
 			for post in subreddit.top(limit=value):
 				embed.add_field(
 					name=f'{count}: {post.title}',
-					value=f'{post.url}{post.id}{post.score} upvotes: {post.ups} downvotes '
+					value=f'{post.url}\n{post.id}{post.score} upvotes: {post.ups} downvotes '
 					      f'{post.downs}',
 					inline=True
 				)
@@ -166,7 +146,7 @@ class WebScraping(commands.Cog):
 			for post in subreddit.hot(limit=value):
 				embed.add_field(
 					name=f'{count}: {post.title}',
-					value=f'{post.url}{post.id}{post.score} upvotes: {post.ups} down'
+					value=f'{post.url}\n{post.id}{post.score} upvotes: {post.ups} down'
 					      f'votes {post.downs}',
 					inline=True
 				)
@@ -176,7 +156,7 @@ class WebScraping(commands.Cog):
 			for post in subreddit.new(limit=value):
 				embed.add_field(
 					name=f'{count}: {post.title}',
-					value=f'{post.url}{post.id}{post.score} upvotes: {post.ups} down'
+					value=f'{post.url}\n{post.id}{post.score} upvotes: {post.ups} down'
 					      f'votes {post.downs}',
 					inline=True
 				)
@@ -187,8 +167,10 @@ class WebScraping(commands.Cog):
 	async def trending(self, ctx, hashtag: str = 'cool', value: int = 1):
 		search_hashtag = tweepy.Cursor(self.api.search, q=f'{hashtag}').items(value)
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Trending Tweets', icon_url=self.bot.user.avatar_url)
 		count = 1
 		for tweet in search_hashtag:
 			x = tweet.id
@@ -223,8 +205,10 @@ class WebScraping(commands.Cog):
 
 		random_post = posts[random_number]
 		embed = discord.Embed(
-			color=discord.Color.orange()
+			color=discord.Color.orange(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Dank Meme', icon_url=self.bot.user.avatar_url)
 		embed.set_image(url=random_post.url)
 		await ctx.send(embed=embed)
 

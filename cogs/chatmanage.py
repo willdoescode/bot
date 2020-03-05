@@ -5,16 +5,6 @@ import discord
 class ChatManage(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-		self.extensions = extensions = [
-			'cogs.errorcatch',
-			'cogs.webscraping',
-			'cogs.funcogs',
-			'cogs.modcog',
-			'cogs.events',
-			'cogs.helpcog',
-			'cogs.chatmanage',
-			'cogs.math'
-		]
 
 	@commands.command()
 	@commands.has_permissions(manage_messages=True)
@@ -23,12 +13,24 @@ class ChatManage(commands.Cog):
 
 	@commands.command()
 	async def ping(self, ctx):
-		await ctx.send(f'{round(self.bot.latency * 1000)}ms')
+		embed = discord.Embed(
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
+		)
+		embed.set_author(name='Pong', icon_url=self.bot.user.avatar_url)
+		embed.add_field(name=f'{round(self.bot.latency * 1000)}ms',
+		                value='')
+		await ctx.send(embed=embed)
 
 	@commands.command()
 	async def cmessage(self, ctx, channel: discord.TextChannel = None):
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
+		)
+		embed.set_author(
+			name='Messages',
+			icon_url=self.bot.user.avatar_url
 		)
 		channel = channel or ctx.channel
 		count = 0
@@ -38,19 +40,22 @@ class ChatManage(commands.Cog):
 			name=channel.name,
 			value=str(count),
 			inline=True
-	    )
-		embed.set_image(url='https://i.imgur.com/J1auBSs.png')
-
+	        )
 		await ctx.send(embed=embed)
 
 	@commands.command()
 	async def members(self, ctx):
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
+		)
+		embed.set_author(
+			name='Members',
+			icon_url=self.bot.user.avatar_url
 		)
 		member = list(self.bot.get_all_members())
 		embed.add_field(
-			name='Amount of members:',
+			name='',
 			value=f'{len(member)}',
 			inline=True
 		)

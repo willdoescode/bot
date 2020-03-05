@@ -10,8 +10,10 @@ class ModCommands(commands.Cog):
 	@commands.has_permissions(administrator=True)
 	async def ban(self, ctx, member: discord.Member, *, reason=None):
 		embed = discord.Embed(
-			color=discord.Color.dark_red()
+			color=discord.Color.dark_red(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Banned', icon_url=self.bot.user.avatar_url)
 		await member.ban(reason=reason)
 		embed.add_field(
 			name=f'{member}',
@@ -24,8 +26,10 @@ class ModCommands(commands.Cog):
 	@commands.has_permissions(administrator=True)
 	async def unban(self, ctx, *, member):
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Unban', icon_url=self.bot.user.avatar_url)
 		banned_users = await ctx.guild.bans()
 		member_name, member_discriminator = member.split('#')
 		for ban_entry in banned_users:
@@ -44,8 +48,10 @@ class ModCommands(commands.Cog):
 	@commands.has_permissions(administrator=True)
 	async def kick(self, ctx, member: discord.Member, *, reason=None):
 		embed = discord.Embed(
-			color=discord.Color.red()
+			color=discord.Color.red(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Kicked', icon_url=self.bot.user.avatar_url)
 		await member.kick(reason=reason)
 		embed.add_field(
 			name=f'{member.display_name}',
@@ -60,8 +66,10 @@ class ModCommands(commands.Cog):
 		role = discord.utils.get(ctx.guild.roles, name='muted')
 		await member.add_roles(role)
 		embed = discord.Embed(
-			color=discord.Color.red()
+			color=discord.Color.red(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Muting', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
 			name=f'{member.display_name}',
 			value=f'has been muted by {ctx.author} for {reason}',
@@ -75,8 +83,10 @@ class ModCommands(commands.Cog):
 		role = discord.utils.get(ctx.guild.roles, name='muted')
 		await member.remove_roles(role)
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Unmuting', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
 			name=f'{member.display_name}',
 			value=f'has been unmuted by {ctx.author}',
@@ -89,8 +99,10 @@ class ModCommands(commands.Cog):
 	async def giverole(self, ctx, role=None, member: discord.Member = None):
 		roles = discord.utils.get(ctx.guild.roles, name=role)
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Role Adding', icon_url=self.bot.user.avatar_url)
 		await member.add_roles(roles)
 		embed.add_field(
 			name=f'{member.display_name}',
@@ -105,8 +117,10 @@ class ModCommands(commands.Cog):
 		roles = discord.utils.get(ctx.guild.roles, name=role)
 		await member.remove_roles(roles)
 		embed = discord.Embed(
-			color=discord.Color.red()
+			color=discord.Color.red(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='Role Removal', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
 			name=f'{member.display_name}',
 			value=f'Has had {roles} role removed'
@@ -131,10 +145,12 @@ class ModCommands(commands.Cog):
 	@commands.has_permissions(administrator=True)
 	async def warn(self, ctx, member: discord.Member = None, *, reason=None):
 		embed = discord.Embed(
-			color=discord.Color.red()
+			color=discord.Color.red(),
+			timestamp=ctx.message.created_at
 		)
+		embed.set_author(name='WARNING', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
-			name='WARNING',
+			name='',
 			value=f'@{member} has been warned for: {reason}',
 			inline=True
 		)

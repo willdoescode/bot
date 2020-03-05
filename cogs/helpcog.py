@@ -17,7 +17,8 @@ class Help(commands.Cog):
 			help1_commands = json.load(f)
 
 		alsoembed = discord.Embed(
-			color=discord.Color.orange()
+			color=discord.Color.orange(),
+			timestamp=ctx.message.created_at
 		)
 
 		embed = discord.Embed(
@@ -25,7 +26,8 @@ class Help(commands.Cog):
 		)
 
 		embed.set_author(
-			name='Help is here'
+			name='Help is here',
+			icon_url=self.bot.user.avatar_url
 		)
 
 		for name, value in help_commands.items():
