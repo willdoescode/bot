@@ -11,9 +11,9 @@ import json
 class Events(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-		self.status = status = cycle(['with your toys', 'with a dog', ' a guitar', 'csgo',
-		                              'with fire', 'with your feeling', 'on my own', 'a song',
-		                              'with bot things', 'oil changing simulator'])
+		self.status = cycle(['with your toys', 'with a dog', ' a guitar', 'csgo',
+		                    'with fire', 'with your feeling', 'on my own', 'a song',
+		                     'with bot things', 'oil changing simulator'])
 
 	@tasks.loop(seconds=2)
 	async def big(self):
