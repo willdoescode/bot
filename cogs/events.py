@@ -17,10 +17,7 @@ class Events(commands.Cog):
 
 	@tasks.loop(seconds=2)
 	async def big(self):
-		await self.bot.change_presence(
-			status=discord.Status.idle,
-			activity=discord.Game(next(self.status))
-		)
+
 
 	@commands.Cog.listener()
 	async def on_ready(self):
@@ -28,6 +25,11 @@ class Events(commands.Cog):
 		self.big.start()
 		embed = discord.Embed(
 			color=discord.Color.green()
+		)
+		await self.bot.change_presence(
+			activity=discord.ActivityType.custom(
+				'Committing acts of discord bot'
+			)
 		)
 		embed.set_author(name='Log', icon_url=self.bot.user.avatar_url)
 		for guild in self.bot.guilds:
