@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
 
 	@client.command()
-	@commands.has_permissions(manage_messages=True)
+	@commands.has_permissions(administrator=True)
 	async def reload(ctx):
 		for extension in extensions:
 			try:
