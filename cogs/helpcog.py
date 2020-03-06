@@ -10,10 +10,10 @@ class Help(commands.Cog):
 	@commands.command()
 	async def help(self, ctx):
 
-		with open('jsonfiles.help.json') as f:
+		with open('jsonfiles.help') as f:
 			help_commands = json.load(f)
 
-		with open('jsonfiles.help1.json') as f:
+		with open('jsonfiles.help1') as f:
 			help1_commands = json.load(f)
 
 		alsoembed = discord.Embed(

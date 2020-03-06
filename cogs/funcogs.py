@@ -26,7 +26,7 @@ class FunCommands(commands.Cog):
 			'Concentrate and ask again.',
 			'Very doubtful.'
 		]
-		with open('jsonfiles.jokes.json', 'r') as f:
+		with open('jsonfiles.jokes', 'r') as f:
 			self.jokes = json.load(f)
 
 	@commands.command()
