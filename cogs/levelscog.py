@@ -1,4 +1,4 @@
-from discord.ext import commands, tasks
+from discord.ext import commands
 import discord
 import json
 import asyncio
@@ -64,10 +64,12 @@ class Level(commands.Cog):
 			timestamp=ctx.message.created_at
 		)
 		embed.set_author(name='ScoreBoard', icon_url=self.bot.user.avatar_url)
+		count = 0
 		for ids in self.users:
+			count += 1
 			name = self.bot.get_user(int(ids))
 			embed.add_field(
-				name=f'{name}',
+				name=f'{count}: {name}',
 				value=f"Level: {self.users[ids]['level'] - 1}",
 				inline=True
 			)

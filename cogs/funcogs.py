@@ -3,6 +3,7 @@ import discord
 import requests
 import random
 from datetime import datetime
+import json
 
 
 class FunCommands(commands.Cog):
@@ -25,33 +26,8 @@ class FunCommands(commands.Cog):
 			'Concentrate and ask again.',
 			'Very doubtful.'
 		]
-		self.jokes = [
-			'Light travels faster than sound. That\'s why some people appear bright until you hear them '
-			'speak',
-			'I was wondering why the ball was getting bigger. Then it hit me',
-			'I have a few jokes about unemployed people, but none of them work',
-			'"I have a split personality," said Tom, being frank.',
-			'When life gives you melons, you\'re dyslexic',
-			'How do you make holy water? You boil the hell out of it',
-			'I Renamed my iPod The Titanic, so when I plug it in, it says “The Titanic is syncing.”',
-			'Will glass coffins be a success? Remains to be seen',
-			'It\'s hard to explain puns to kleptomaniacs because they always take things literally',
-			'Last night, I dreamed I was swimming in an ocean of orange soda. But it was just a Fanta sea',
-			'I lost my job at the bank on my very first day. A woman asked me to check her balance, '
-			'so I pushed her over',
-			'What’s the difference between a hippo and a zippo? One is really heavy and the other is a '
-			'little lighter',
-			'Two windmills are standing in a wind farm. One asks, “What’s your favorite kind of music?” '
-			'The other says, “I’m a big metal fan.”',
-			'Did you hear about the guy whose whole left side was cut off? He’s all right now',
-			'Hear about the new restaurant called Karma? There’s no menu - you get what you deserve',
-			'England doesn\'t have a kidney bank, but it does have a Liverpool',
-			'A cross-eyed teacher couldn’t control his pupils',
-			'Is it ignorance or apathy that\'s destroying the world today? I don\'t know and don\'t '
-			'really '
-			'care',
-			'How do you throw a space party? You planet'
-		]
+		with open('jokes.json', 'r') as f:
+			self.jokes = json.load(f)
 
 	@commands.command()
 	async def pun(self, ctx):
