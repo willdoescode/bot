@@ -52,7 +52,7 @@ class Level(commands.Cog):
 				timestamp=ctx.message.created_at
 			)
 			embed.set_author(name=f'Level - {member}', icon_url=self.bot.user.avatar_url)
-			embed.add_field(name="Level", value=self.users[member_id]['level'] - 1)
+			embed.add_field(name="Level", value=self.users[member_id]['level'])
 			embed.add_field(name="XP", value=self.users[member_id]['exp'])
 
 			await ctx.send(embed=embed)
@@ -70,7 +70,7 @@ class Level(commands.Cog):
 			name = self.bot.get_user(int(ids))
 			embed.add_field(
 				name=f'{count}: {name}',
-				value=f"Level: {self.users[ids]['level'] - 1}\nXP: {self.users[ids]['exp']}",
+				value=f"Level: {self.users[ids]['level']}\nXP: {self.users[ids]['exp']}",
 				inline=True
 			)
 		await ctx.send(embed=embed)
