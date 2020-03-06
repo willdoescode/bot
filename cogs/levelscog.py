@@ -40,7 +40,7 @@ class Level(commands.Cog):
 			self.users[author_id]['level'] += 1
 
 	@commands.command()
-	async def level(self, ctx, member: discord.Member = None):
+	async def rank(self, ctx, member: discord.Member = None):
 		member = ctx.author if not member else member
 		member_id = str(member.id)
 
