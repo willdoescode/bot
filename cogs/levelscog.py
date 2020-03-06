@@ -9,13 +9,13 @@ class Level(commands.Cog):
 		self.bot = bot
 		self.bot.loop.create_task(self.save_users())
 
-		with open('jsonfiles.users', 'r') as f:
+		with open('users.json', 'r') as f:
 			self.users = json.load(f)
 
 	async def save_users(self):
 		await self.bot.wait_until_ready()
 		while not self.bot.is_closed():
-			with open('jsonfiles.users', 'w') as f:
+			with open('users.json', 'w') as f:
 				json.dump(self.users, f, indent=4)
 
 			await asyncio.sleep(5)
