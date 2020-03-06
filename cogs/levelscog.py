@@ -15,7 +15,7 @@ class Level(commands.Cog):
 	async def save_users(self):
 		await self.bot.wait_until_ready()
 		while not self.bot.is_closed():
-			with open('users.json', 'w') as f:
+			with open('jsonfiles.users.json', 'w') as f:
 				json.dump(self.users, f, indent=4)
 
 			await asyncio.sleep(5)
