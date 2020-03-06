@@ -36,7 +36,7 @@ class Level(commands.Cog):
 
 		if self.users[author_id]['exp'] >= round(4 * (self.users[author_id]['level'] ** 3) / 5):
 			await message.channel.send(f"{message.author.mention} is now level"
-			               f" {self.users[author_id]['level']}")
+			               f" {self.users[author_id]['level'] + 1}")
 			self.users[author_id]['level'] += 1
 
 	@commands.command()
