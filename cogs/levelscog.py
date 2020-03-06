@@ -9,7 +9,7 @@ class Level(commands.Cog):
 		self.bot = bot
 		self.bot.loop.create_task(self.save_users())
 
-		with open('users.json', 'r') as f:
+		with open('jsonfiles.users.json', 'r') as f:
 			self.users = json.load(f)
 
 	async def save_users(self):
