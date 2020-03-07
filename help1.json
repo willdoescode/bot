@@ -1,39 +1,39 @@
 {
   "help": {
-    ".trending": {
+    "dotrending": {
       "use": "gets trending tweets"
     },
-    ".members": {
+    "domembers": {
       "use": "gets the amount of members"
     },
-    ".cmessage": {
+    "docmessage": {
       "use": "shows total messages in channel"
     },
-    ".connected_servers": {
+    "doconnected_servers": {
       "use": "shows list of connected servers"
     },
-    ".getinfo": {
+    "dogetinfo": {
       "use": "gets info on a user"
     },
-    ".giverole": {
+    "dogiverole": {
       "use": "usage: .giverole muted @user, can be called by +role"
     },
-    ".removerole": {
+    "doremoverole": {
       "use": "usage: .removerole muted @user, can be called by -role"
     },
-    ".embed": {
+    "doembed": {
       "use": "creates embed"
     },
-    ".nick": {
+    "donick": {
       "use": "allows mods to give nicknames"
     },
-    ".meme": {
+    "domeme": {
       "use": "gets memes"
     },
-    ".rank": {
+    "dorank": {
       "use": "gets your rank"
     },
-    ".lb": {
+    "dolb": {
       "use": "gets leaderboard for levels. aliases=.leaderboard"
     }
   }

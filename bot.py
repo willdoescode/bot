@@ -6,7 +6,7 @@ from discord.ext import (
 )
 config = ConfigParser()
 config.read('configs.ini')
-client = commands.Bot(command_prefix='.')
+client = commands.Bot(command_prefix='do')
 client.remove_command('help')
 extensions = [
 	'cogs.errorcatch',

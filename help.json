@@ -21,43 +21,43 @@
     ".8ball": {
       "use": "Magic 8all"
     },
-    ".clear": {
+    "doclear": {
       "use": "clears messages"
     },
-    ".show_code": {
+    "doshow_code": {
       "use": "shows the code that makes up this bot"
     },
-    ".pfp": {
+    "dopfp": {
       "use": "shows pfps of users"
     },
-    ".mute": {
+    "domute": {
       "use": "mutes users"
     },
-    ".unmute": {
+    "dounmute": {
       "use": "unmutes users"
     },
-    ".coinflip": {
+    "docoinflip": {
       "use": "flips a coin, settles debates"
     },
-    ".add_mod": {
+    "doadd_mod": {
       "use": "adds a moderator"
     },
-    ".minus_mod": {
+    "dominus_mod": {
       "use": "removes a moderator"
     },
-    ".yell": {
+    "doyell": {
       "use": "yells"
     },
-    ".yell_here": {
+    "doyell_here": {
       "use": "yells here"
     },
-    ".showerthought": {
+    "doshowerthought": {
       "use": "gets showerthoughts"
     },
-    ".getreddit": {
+    "dogetreddit": {
       "use": "gets reddit posts"
     },
-    ".define": {
+    "dodefine": {
       "use": "gets word definitions"
     }
   }
