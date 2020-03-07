@@ -26,7 +26,12 @@ class Events(commands.Cog):
 		now = datetime.now()
 		self.big.start()
 		embed = discord.Embed(
-			color=discord.Color.green()
+			color=discord.Color.green(),
+			timestamp=now.strftime("%H: %M: %S")
+		)
+		embed.set_author(
+			name='Connected!',
+			icon_url=self.bot.user.avatar_url
 		)
 		embed.set_author(name='Log', icon_url=self.bot.user.avatar_url)
 		for guild in self.bot.guilds:
@@ -34,7 +39,7 @@ class Events(commands.Cog):
 				if channel.name == 'logs':
 					embed.add_field(
 						name=f'{self.bot.user.name}',
-						value=f'Has connected\ntime is {now.strftime("%H: %M: %S")}'
+						value=f'Has connected'
 					)
 					await channel.send(embed=embed)
 					embed = discord.Embed(
