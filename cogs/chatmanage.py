@@ -9,11 +9,23 @@ class ChatManage(commands.Cog):
 	@commands.command()
 	@commands.has_permissions(manage_messages=True)
 	async def clear(self, ctx, amount=100000):
+		embed = discord.Embed(
+			color=discord.Color.red(),
+			timestamp=ctx.message.created_at
+		)
+		embed.set_author(
+			name='.clear',
+			icon_url=self.bot.user.avatar_url
+		)
+		embed.add_field(
+			name=f'{ctx.author}',
+			value=f'Has cleared {amount} messages in {ctx.channel.mention}'
+		)
 		await ctx.channel.purge(limit=amount + 1)
 		for guild in self.bot.guilds:
 			for channel in guild.text_channels:
 				if channel.name == 'logs':
-					await channel.send(f'Cleared {amount} messages')
+					await channel.send(embed=embed)
 
 	@commands.command()
 	async def ping(self, ctx):
