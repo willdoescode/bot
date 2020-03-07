@@ -29,10 +29,10 @@ class Help(commands.Cog):
 		)
 
 		for name, value in self.help_commands.items():
-			embed.add_field(name=name, value=value, inline=True)
+			embed.add_field(name=str(name), value=str(value), inline=False)
 
 		for names, values in self.help1_commands.items():
-			alsoembed.add_field(name=names, value=values, inline=True)
+			alsoembed.add_field(name=str(names), value=str(values), inline=False)
 		person = ctx.author
 		await person.send(embed=embed)
 		await person.send(embed=alsoembed)
