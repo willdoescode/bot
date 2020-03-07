@@ -10,6 +10,7 @@ class ChatManage(commands.Cog):
 	@commands.has_permissions(manage_messages=True)
 	async def clear(self, ctx, amount=100000):
 		await ctx.channel.purge(limit=amount + 1)
+		await ctx.send(f'Cleared {amount} messages')
 
 	@commands.command()
 	async def ping(self, ctx):
@@ -22,7 +23,7 @@ class ChatManage(commands.Cog):
 		                value=' ')
 		await ctx.send(embed=embed)
 
-	@commands.command()
+	@commands.command(aliases=['cm'])
 	async def cmessage(self, ctx, channel: discord.TextChannel = None):
 		embed = discord.Embed(
 			color=discord.Color.green(),
