@@ -35,7 +35,7 @@ class ChatManage(commands.Cog):
 		)
 		embed.set_author(name='Pong', icon_url=self.bot.user.avatar_url)
 		embed.add_field(name=f'{round(self.bot.latency * 1000)}ms',
-		                value=' ')
+		                value='--------')
 		await ctx.send(embed=embed)
 
 	@commands.command(aliases=['cm'])
@@ -71,7 +71,7 @@ class ChatManage(commands.Cog):
 		)
 		member = list(self.bot.get_all_members())
 		embed.add_field(
-			name=' ',
+			name='--------',
 			value=f'{len(member)}',
 			inline=True
 		)
