@@ -28,16 +28,16 @@ class Help(commands.Cog):
 			icon_url=self.bot.user.avatar_url
 		)
 
-		for value in self.help_commands:
+		for value in self.help_commands['help']:
 			embed.add_field(
-				name=self.help_commands,
+				name=str(value),
 				value=self.help_commands[value]['use'],
 				inline=True
 			)
 
-		for value in self.help1_commands:
+		for value in self.help1_commands['help']:
 			alsoembed.add_field(
-				name=self.help1_commands,
+				name=str(value),
 				value=self.help1_commands[value]['use'],
 				inline=True
 			)

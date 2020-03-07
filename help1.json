@@ -1,38 +1,40 @@
 {
-  ".trending": {
-    "use": "gets trending tweets"
-  },
-  ".members": {
-    "use": "gets the amount of members"
-  },
-  ".cmessage": {
-    "use": "shows total messages in channel"
-  },
-  ".connected_servers": {
-    "use": "shows list of connected servers"
-  },
-  ".getinfo": {
-    "use": "gets info on a user"
-  },
-  ".giverole": {
-    "use": "usage: .giverole muted @user, can be called by +role"
-  },
-  ".removerole": {
-    "use": "usage: .removerole muted @user, can be called by -role"
-  },
-  ".embed": {
-    "use": "creates embed"
-  },
-  ".nick": {
-    "use": "allows mods to give nicknames"
-  },
-  ".meme": {
-    "use": "gets memes"
-  },
-  ".rank": {
-    "use": "gets your rank"
-  },
-  ".lb": {
-    "use": "gets leaderboard for levels. aliases=.leaderboard"
+  "help": {
+    ".trending": {
+      "use": "gets trending tweets"
+    },
+    ".members": {
+      "use": "gets the amount of members"
+    },
+    ".cmessage": {
+      "use": "shows total messages in channel"
+    },
+    ".connected_servers": {
+      "use": "shows list of connected servers"
+    },
+    ".getinfo": {
+      "use": "gets info on a user"
+    },
+    ".giverole": {
+      "use": "usage: .giverole muted @user, can be called by +role"
+    },
+    ".removerole": {
+      "use": "usage: .removerole muted @user, can be called by -role"
+    },
+    ".embed": {
+      "use": "creates embed"
+    },
+    ".nick": {
+      "use": "allows mods to give nicknames"
+    },
+    ".meme": {
+      "use": "gets memes"
+    },
+    ".rank": {
+      "use": "gets your rank"
+    },
+    ".lb": {
+      "use": "gets leaderboard for levels. aliases=.leaderboard"
+    }
   }
 }

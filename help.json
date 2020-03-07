@@ -1,62 +1,64 @@
 {
-  ".ping": {
-    "use": "Returns Bot Latency"
-  },
-  ".dm": {
-    "use": "Slides into your dms"
-  },
-  ".pun": {
-    "use": "says a pun"
-  },
-  ".ban": {
-    "use": "bans them scrubs"
-  },
-  ".unban": {
-    "use": "unbans them scrubs"
-  },
-  ".kick": {
-    "use": "kicks a selected user"
-  },
-  ".8ball": {
-    "use": "Magic 8all"
-  },
-  ".clear": {
-    "use": "clears messages"
-  },
-  ".show_code": {
-    "use": "shows the code that makes up this bot"
-  },
-  ".pfp": {
-    "use": "shows pfps of users"
-  },
-  ".mute": {
-    "use": "mutes users"
-  },
-  ".unmute": {
-    "use": "unmutes users"
-  },
-  ".coinflip": {
-    "use": "flips a coin, settles debates"
-  },
-  ".add_mod": {
-    "use": "adds a moderator"
-  },
-  ".minus_mod": {
-    "use": "removes a moderator"
-  },
-  ".yell": {
-    "use": "yells"
-  },
-  ".yell_here": {
-    "use": "yells here"
-  },
-  ".showerthought": {
-    "use": "gets showerthoughts"
-  },
-  ".getreddit": {
-    "use": "gets reddit posts"
-  },
-  ".define": {
-    "use": "gets word definitions"
+  "help": {
+    ".ping": {
+      "use": "Returns Bot Latency"
+    },
+    ".dm": {
+      "use": "Slides into your dms"
+    },
+    ".pun": {
+      "use": "says a pun"
+    },
+    ".ban": {
+      "use": "bans them scrubs"
+    },
+    ".unban": {
+      "use": "unbans them scrubs"
+    },
+    ".kick": {
+      "use": "kicks a selected user"
+    },
+    ".8ball": {
+      "use": "Magic 8all"
+    },
+    ".clear": {
+      "use": "clears messages"
+    },
+    ".show_code": {
+      "use": "shows the code that makes up this bot"
+    },
+    ".pfp": {
+      "use": "shows pfps of users"
+    },
+    ".mute": {
+      "use": "mutes users"
+    },
+    ".unmute": {
+      "use": "unmutes users"
+    },
+    ".coinflip": {
+      "use": "flips a coin, settles debates"
+    },
+    ".add_mod": {
+      "use": "adds a moderator"
+    },
+    ".minus_mod": {
+      "use": "removes a moderator"
+    },
+    ".yell": {
+      "use": "yells"
+    },
+    ".yell_here": {
+      "use": "yells here"
+    },
+    ".showerthought": {
+      "use": "gets showerthoughts"
+    },
+    ".getreddit": {
+      "use": "gets reddit posts"
+    },
+    ".define": {
+      "use": "gets word definitions"
+    }
   }
 }
