@@ -88,7 +88,7 @@ class FunCommands(commands.Cog):
 		)
 		show_avatar.add_field(
 			name=member.display_name,
-			value=show_avatar.Empty,
+			value='--------',
 			inline=True
 		)
 		await ctx.send(embed=show_avatar)
