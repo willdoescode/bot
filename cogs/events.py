@@ -25,8 +25,7 @@ class Events(commands.Cog):
 	async def on_ready(self):
 		self.big.start()
 		embed = discord.Embed(
-			color=discord.Color.green(),
-			timestamp=datetime.date
+			color=discord.Color.green()
 		)
 		embed.set_author(
 			name='Connected!',

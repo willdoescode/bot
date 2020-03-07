@@ -38,7 +38,7 @@ class FunCommands(commands.Cog):
 		)
 		embed.set_author(name='Joke', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
-			name='. ',
+			name=embed.Empty,
 			value=f'{joke}',
 			inline=False
 		)
@@ -67,7 +67,7 @@ class FunCommands(commands.Cog):
 		embed.set_author(name='Coin says:', icon_url=self.bot.user.avatar_url)
 		ok = ['heads', 'tails']
 		embed.add_field(
-			name='. ',
+			name=embed.Empty,
 			value=f'{random.choice(ok)}',
 			inline=False
 		)
@@ -89,7 +89,7 @@ class FunCommands(commands.Cog):
 		)
 		show_avatar.add_field(
 			name=member.display_name,
-			value=' .',
+			value=show_avatar.Empty,
 			inline=True
 		)
 		await ctx.send(embed=show_avatar)
@@ -158,12 +158,6 @@ class FunCommands(commands.Cog):
 		)
 		await member.edit(nick=nickname)
 		await ctx.send(embed=embed)
-
-	@commands.command()
-	async def time(self, ctx):
-		now = datetime.now()
-		current_time = now.strftime("%H:%M")
-		await ctx.send(f'Time: {current_time}')
 
 
 def setup(bot):

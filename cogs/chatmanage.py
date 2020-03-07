@@ -71,7 +71,7 @@ class ChatManage(commands.Cog):
 		)
 		member = list(self.bot.get_all_members())
 		embed.add_field(
-			name=' ',
+			name=embed.Empty,
 			value=f'{len(member)}',
 			inline=True
 		)
