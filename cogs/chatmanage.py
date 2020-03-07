@@ -14,12 +14,6 @@ class ChatManage(commands.Cog):
 			for channel in guild.text_channels:
 				if channel.name == 'logs':
 					await channel.send(f'Cleared {amount} messages')
-				else:
-					await ctx.send(
-						f'Cleared {amount} messages\n'
-						f'to stop seeing these messages in main channels create a '
-						f'"logs" channel'
-					)
 
 	@commands.command()
 	async def ping(self, ctx):
