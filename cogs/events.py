@@ -23,11 +23,10 @@ class Events(commands.Cog):
 
 	@commands.Cog.listener()
 	async def on_ready(self):
-		now = datetime.now()
 		self.big.start()
 		embed = discord.Embed(
 			color=discord.Color.green(),
-			timestamp=now.strftime("%H: %M: %S")
+			timestamp=datetime.date
 		)
 		embed.set_author(
 			name='Connected!',
