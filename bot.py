@@ -17,7 +17,8 @@ extensions = [
 	'cogs.helpcog',
 	'cogs.chatmanage',
 	'cogs.math',
-	'cogs.levelscog'
+	'cogs.levelscog',
+	'cogs.comscog'
 ]
 if __name__ == '__main__':
 	for ext in extensions:
