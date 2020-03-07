@@ -12,7 +12,7 @@ class Help(commands.Cog):
 			self.help1_commands = json.load(f)
 
 	@commands.command()
-	async def help(self, ctx, command=None):
+	async def help(self, ctx):
 
 		alsoembed = discord.Embed(
 			color=discord.Color.orange(),
@@ -29,10 +29,10 @@ class Help(commands.Cog):
 		)
 
 		for name, value in self.help_commands.items():
-			embed.add_field(name=str(name), value=str(value), inline=False)
+			embed.add_field(name=name, value=value, inline=False)
 
 		for names, values in self.help1_commands.items():
-			alsoembed.add_field(name=str(names), value=str(values), inline=False)
+			alsoembed.add_field(name=names, value=values, inline=False)
 		person = ctx.author
 		await person.send(embed=embed)
 		await person.send(embed=alsoembed)

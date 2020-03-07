@@ -1,64 +1,26 @@
 {
-  "help": {
-    ".ping": {
-      "use": "Returns Bot Latency"
-    },
-    ".dm": {
-      "use": "Slides into your dms"
-    },
-    ".pun": {
-      "use": "says a pun"
-    },
-    ".ban": {
-      "use": "bans them scrubs"
-    },
-    ".unban": {
-      "use": "unbans them scrubs"
-    },
-    ".kick": {
-      "use": "kicks a selected user"
-    },
-    ".8ball": {
-      "use": "Magic 8all"
-    },
-    "doclear": {
-      "use": "clears messages"
-    },
-    "doshow_code": {
-      "use": "shows the code that makes up this bot"
-    },
-    "dopfp": {
-      "use": "shows pfps of users"
-    },
-    "domute": {
-      "use": "mutes users"
-    },
-    "dounmute": {
-      "use": "unmutes users"
-    },
-    "docoinflip": {
-      "use": "flips a coin, settles debates"
-    },
-    "doadd_mod": {
-      "use": "adds a moderator"
-    },
-    "dominus_mod": {
-      "use": "removes a moderator"
-    },
-    "doyell": {
-      "use": "yells"
-    },
-    "doyell_here": {
-      "use": "yells here"
-    },
-    "doshowerthought": {
-      "use": "gets showerthoughts"
-    },
-    "dogetreddit": {
-      "use": "gets reddit posts"
-    },
-    "dodefine": {
-      "use": "gets word definitions"
-    }
-  }
+  ".ping": "Returns Bot Latency",
+  ".dm": "Slides into your dms",
+  ".pun": "says a pun",
+  ".ban": "bans them scrubs",
+  ".unban": "unbans them scrubs",
+  ".kick": "kicks a selected user",
+  ".8ball": "Magic 8all",
+  ".clear": "clears messages",
+  ".show_code": "shows the code that makes up this bot",
+  ".pfp": "shows pfps of users",
+  ".mute": "mutes users",
+  ".unmute": "unmutes users",
+  ".coinflip": "flips a coin",
+  ".add_mod": "adds a moderator",
+  ".minus_mod": "removes a moderator",
+  ".yell": "yells",
+  ".yell_here": "yells here",
+  ".add": "adds nums",
+  ".subtract": "does subtraction",
+  ".divide": "divides",
+  ".multiply": "multiplies",
+  ".showerthought": "gets showerthoughts",
+  ".getreddit": "gets reddit posts",
+  ".define": "gets word definitions"
 }

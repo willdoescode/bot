@@ -1,40 +1,14 @@
 {
-  "help": {
-    "dotrending": {
-      "use": "gets trending tweets"
-    },
-    "domembers": {
-      "use": "gets the amount of members"
-    },
-    "docmessage": {
-      "use": "shows total messages in channel"
-    },
-    "doconnected_servers": {
-      "use": "shows list of connected servers"
-    },
-    "dogetinfo": {
-      "use": "gets info on a user"
-    },
-    "dogiverole": {
-      "use": "usage: .giverole muted @user, can be called by +role"
-    },
-    "doremoverole": {
-      "use": "usage: .removerole muted @user, can be called by -role"
-    },
-    "doembed": {
-      "use": "creates embed"
-    },
-    "donick": {
-      "use": "allows mods to give nicknames"
-    },
-    "domeme": {
-      "use": "gets memes"
-    },
-    "dorank": {
-      "use": "gets your rank"
-    },
-    "dolb": {
-      "use": "gets leaderboard for levels. aliases=.leaderboard"
-    }
-  }
+  ".trending": "gets trending tweets",
+  ".members": "gets the amount of members",
+  ".cmessage":"shows total messages in channel",
+  ".connected_servers": "shows connected servers",
+  ".getinfo": "gets info on a user",
+  ".giverole": "usage: .giverole muted @user, can be called by +role",
+  ".removerole": "usage: .removerole muted @user, can be called by -role",
+  ".embed": "creates embed",
+  ".nick": "allows mods to give nicknames",
+  ".meme": "gets memes",
+  ".level": "gets your level",
+  ".lb": "gets leaderboard for levels. aliases=.leaderboard"
 }
