@@ -30,14 +30,14 @@ class Help(commands.Cog):
 
 		for value in self.help_commands:
 			embed.add_field(
-				name=self.help_commands[value],
+				name=self.help_commands,
 				value=self.help_commands[value]['use'],
 				inline=True
 			)
 
 		for value in self.help1_commands:
 			alsoembed.add_field(
-				name=self.help1_commands[value],
+				name=self.help1_commands,
 				value=self.help1_commands[value]['use'],
 				inline=True
 			)
