@@ -28,19 +28,11 @@ class Help(commands.Cog):
 			icon_url=self.bot.user.avatar_url
 		)
 
-		for value in self.help_commands['help']:
-			embed.add_field(
-				name=str(value),
-				value=self.help_commands[value]['use'],
-				inline=True
-			)
+		for name, value in self.help_commands.items():
+			embed.add_field(name=name, value=value, inline=True)
 
-		for value in self.help1_commands['help']:
-			alsoembed.add_field(
-				name=str(value),
-				value=self.help1_commands[value]['use'],
-				inline=True
-			)
+		for names, values in self.help1_commands.items():
+			alsoembed.add_field(name=names, value=values, inline=True)
 		person = ctx.author
 		await person.send(embed=embed)
 		await person.send(embed=alsoembed)
