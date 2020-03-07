@@ -10,5 +10,6 @@
   ".nick": "allows mods to give nicknames",
   ".meme": "gets memes",
   ".level": "gets your level",
-  ".lb": "gets leaderboard for levels. aliases=.leaderboard"
+  ".lb": "gets leaderboard for levels. aliases=.leaderboard",
+  ".servers": "gets list of connected servers"
 }
