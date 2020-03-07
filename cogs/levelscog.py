@@ -51,7 +51,7 @@ class Level(commands.Cog):
 				color=discord.Color.purple(),
 				timestamp=ctx.message.created_at
 			)
-			embed.set_author(name=f'Level - {member}', icon_url=self.bot.user.avatar_url)
+			embed.set_author(name=f'Rank - {member}', icon_url=self.bot.user.avatar_url)
 			embed.add_field(name="Level", value=self.users[member_id]['level'])
 			embed.add_field(name="XP", value=self.users[member_id]['exp'])
 
