@@ -6,15 +6,13 @@ import json
 class Help(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
+		with open('help.json') as f:
+			self.help_commands = json.load(f)
+		with open('help1.json') as f:
+			self.help1_commands = json.load(f)
 
 	@commands.command()
-	async def help(self, ctx):
-
-		with open('help.json') as f:
-			help_commands = json.load(f)
-
-		with open('help1.json') as f:
-			help1_commands = json.load(f)
+	async def help(self, ctx, command=None):
 
 		alsoembed = discord.Embed(
 			color=discord.Color.orange(),
@@ -30,11 +28,11 @@ class Help(commands.Cog):
 			icon_url=self.bot.user.avatar_url
 		)
 
-		for name, value in help_commands.items():
-			embed.add_field(name=name, value=value, inline=True)
+		for value in self.help_commands:
+			embed.add_field(name=value, value=value['use'], inline=True)
 
-		for names, values in help1_commands.items():
-			alsoembed.add_field(name=names, value=values, inline=True)
+		for value in self.help1_commands:
+			alsoembed.add_field(name=value, value=value['use'], inline=True)
 		person = ctx.author
 		await person.send(embed=embed)
 		await person.send(embed=alsoembed)
