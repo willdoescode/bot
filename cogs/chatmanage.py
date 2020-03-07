@@ -10,7 +10,16 @@ class ChatManage(commands.Cog):
 	@commands.has_permissions(manage_messages=True)
 	async def clear(self, ctx, amount=100000):
 		await ctx.channel.purge(limit=amount + 1)
-		await ctx.send(f'Cleared {amount} messages')
+		for guild in self.bot.guilds:
+			for channel in guild.text_channels:
+				if channel.name == 'logs':
+					await channel.send(f'Cleared {amount} messages')
+				else:
+					await ctx.send(
+						f'Cleared {amount} messages\n'
+						f'to stop seeing these messages in main channels create a '
+						f'"logs" channel'
+					)
 
 	@commands.command()
 	async def ping(self, ctx):
@@ -41,7 +50,7 @@ class ChatManage(commands.Cog):
 			name=channel.name,
 			value=str(count),
 			inline=True
-	        )
+		)
 		await ctx.send(embed=embed)
 
 	@commands.command()
