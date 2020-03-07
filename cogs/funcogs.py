@@ -2,7 +2,6 @@ from discord.ext import commands
 import discord
 import requests
 import random
-from datetime import datetime
 import json
 
 
@@ -38,7 +37,7 @@ class FunCommands(commands.Cog):
 		)
 		embed.set_author(name='Joke', icon_url=self.bot.user.avatar_url)
 		embed.add_field(
-			name=embed.Empty,
+			name=' ',
 			value=f'{joke}',
 			inline=False
 		)
@@ -67,7 +66,7 @@ class FunCommands(commands.Cog):
 		embed.set_author(name='Coin says:', icon_url=self.bot.user.avatar_url)
 		ok = ['heads', 'tails']
 		embed.add_field(
-			name=embed.Empty,
+			name=' ',
 			value=f'{random.choice(ok)}',
 			inline=False
 		)
