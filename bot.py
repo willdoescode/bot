@@ -22,12 +22,8 @@ extensions = [
 ]
 if __name__ == '__main__':
 	for ext in extensions:
-		try:
-			client.load_extension(ext)
-			print(f'Loaded {ext}')
-		except:
-			print(f'{ext} Failed to load')
-
+		client.load_extension(ext)
+		print(f'Loaded {ext}')
 
 	@client.command()
 	@commands.has_permissions(administrator=True)
