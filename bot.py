@@ -16,8 +16,8 @@ extensions = [
 	'cogs.events',
 	'cogs.helpcog',
 	'cogs.chatmanage',
-	'cogs.math',
 	'cogs.levelscog',
+	'cogs.math',
 	'cogs.comscog'
 ]
 if __name__ == '__main__':
