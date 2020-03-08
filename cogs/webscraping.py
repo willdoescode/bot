@@ -35,7 +35,6 @@ class WebScraping(commands.Cog):
 			config['twitter']['access_secret']
 		)
 		self.api = tweepy.API(self.auth)
-		self.memes = self.reddit.subreddit('dankmemes')
 
 	@commands.command()
 	async def define(self, ctx, word: str):
@@ -190,7 +189,8 @@ class WebScraping(commands.Cog):
 	async def meme(self, ctx):
 		post_limit = 20
 
-		new_submissions = self.memes(limit=post_limit)
+		subreddit = self.reddit.subreddit('dankmemes')
+		new_submissions = subreddit(limit=post_limit)
 
 		current_time = int(time.time())
 
