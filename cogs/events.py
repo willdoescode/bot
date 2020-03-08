@@ -4,7 +4,6 @@ from discord.ext import (
 )
 from itertools import cycle
 import discord
-from datetime import datetime
 
 
 class Events(commands.Cog):
