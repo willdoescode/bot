@@ -9,6 +9,7 @@ config.read('configs.ini')
 client = commands.Bot(command_prefix='.')
 client.remove_command('help')
 extensions = [
+	'cogs.errorcatch',
 	'cogs.webscraping',
 	'cogs.funcogs',
 	'cogs.modcog',
