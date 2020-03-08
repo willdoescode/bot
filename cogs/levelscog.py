@@ -71,7 +71,7 @@ class Level(commands.Cog):
 			embed.add_field(
 				name=f'{count}: {name}',
 				value=f"Level: {self.users[ids]['level']}\nXP: {self.users[ids]['exp']}",
-				inline=True
+				inline=False
 			)
 		await ctx.send(embed=embed)
 
