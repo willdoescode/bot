@@ -26,14 +26,16 @@ if __name__ == '__main__':
 		print(f'Loaded {ext}')
 
 	@client.command()
-	@commands.has_permissions(administrator=True)
 	async def reload(ctx):
-		for extension in extensions:
-			try:
-				client.unload_extension(extension)
-				await ctx.send(f'Reloading {extension}')
-				client.load_extension(extension)
-			except:
-				await ctx.send(f'failed to reload {extension} extension')
+		if ctx.author == 'PieTales':
+			for extension in extensions:
+				try:
+					client.unload_extension(extension)
+					await ctx.send(f'Reloading {extension}')
+					client.load_extension(extension)
+				except:
+					await ctx.send(f'failed to reload {extension} extension')
+		else:
+			await ctx.send('Contact PieTales#0495 to reload cogs!')
 
 client.run(config['discord']['key'])
