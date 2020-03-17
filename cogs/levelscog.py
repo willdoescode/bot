@@ -22,9 +22,6 @@ class Level(commands.Cog):
 
 	@commands.Cog.listener()
 	async def on_message(self, message):
-		for role in message.author.role:
-			if role == 'BOT':
-				return
 		if message.author == self.bot.user:
 			return
 		role = discord.utils.get(message.guild.roles, name="BOT")
