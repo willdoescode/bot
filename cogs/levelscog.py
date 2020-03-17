@@ -22,25 +22,29 @@ class Level(commands.Cog):
 
 	@commands.Cog.listener()
 	async def on_message(self, message):
-		if message.author == self.bot.user:
-			return
-		role = discord.utils.get(message.guild.roles, name="BOT")
-		if role in message.author.roles:
-			return
+		for role in message.author.roles:
+			if role == 'BOT':
+				return
+			else:
+				if message.author == self.bot.user:
+					return
+				role = discord.utils.get(message.guild.roles, name="BOT")
+				if role in message.author.roles:
+					return
 
-		author_id = str(message.author.id)
+				author_id = str(message.author.id)
 
-		if author_id not in self.users:
-			self.users[author_id] = {}
-			self.users[author_id]['level'] = 1
-			self.users[author_id]['exp'] = 0
+				if author_id not in self.users:
+					self.users[author_id] = {}
+					self.users[author_id]['level'] = 1
+					self.users[author_id]['exp'] = 0
 
-		self.users[author_id]['exp'] += 2
+				self.users[author_id]['exp'] += 2
 
-		if self.users[author_id]['exp'] >= round(4 * (self.users[author_id]['level'] ** 3) / 5):
-			await message.channel.send(f"{message.author.mention} is now level"
-			               f" {self.users[author_id]['level'] + 1}")
-			self.users[author_id]['level'] += 1
+				if self.users[author_id]['exp'] >= round(4 * (self.users[author_id]['level'] ** 3) / 5):
+					await message.channel.send(f"{message.author.mention} is now level"
+								f" {self.users[author_id]['level'] + 1}")
+					self.users[author_id]['level'] += 1
 
 	@commands.command()
 	async def rank(self, ctx, member: discord.Member = None):
