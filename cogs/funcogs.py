@@ -146,7 +146,7 @@ class FunCommands(commands.Cog):
 	
 	@commands.command()
 	async def ok(self, ctx):
-		ctx.send('Boomer')
+		await ctx.send('Boomer')
 
 
 def setup(bot):
