@@ -185,33 +185,6 @@ class WebScraping(commands.Cog):
 			count += 1
 		await ctx.send(embed=embed)
 
-	@commands.command()
-	async def meme(self, ctx):
-		post_limit = 20
-
-		subreddit = self.reddit.subreddit('dankmemes')
-		new_submissions = subreddit(limit=post_limit)
-
-		current_time = int(time.time())
-
-		posts = []
-
-		for submission in new_submissions:
-			sub_age = ((current_time - submission.created_utc) / 60 / 60 / 24)
-			if sub_age < 1:
-				posts.append(submission)
-
-		random_number = random.randint(0, post_limit - 1)
-
-		random_post = posts[random_number]
-		embed = discord.Embed(
-			color=discord.Color.orange(),
-			timestamp=ctx.message.created_at
-		)
-		embed.set_author(name='Dank Meme', icon_url=self.bot.user.avatar_url)
-		embed.set_image(url=random_post.url)
-		await ctx.send(embed=embed)
-
 
 def setup(bot):
 	bot.add_cog(WebScraping(bot))

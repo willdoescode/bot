@@ -143,6 +143,10 @@ class FunCommands(commands.Cog):
 		)
 		await member.edit(nick=nickname)
 		await ctx.send(embed=embed)
+	
+	@commands.command()
+	async def ok(self, ctx):
+		ctx.send('Boomer')
 
 
 def setup(bot):

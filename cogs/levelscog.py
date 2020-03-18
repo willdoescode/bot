@@ -24,9 +24,6 @@ class Level(commands.Cog):
 	async def on_message(self, message):
 		if message.author == self.bot.user:
 			return
-		role = discord.utils.get(message.guild.roles, name="BOT")
-		if role in message.author.roles:
-			return
 
 		author_id = str(message.author.id)
 
