@@ -67,7 +67,7 @@ class Level(commands.Cog):
 		count = 0
 		for ids in self.users:
 			count += 1
-			name = self.bot.get_user(int(ids))
+			name = self.bot.get_user(ids)
 			embed.add_field(
 				name=f'{count}: {name}',
 				value=f"Level: {self.users[ids]['level']}\nXP: {self.users[ids]['exp']}",

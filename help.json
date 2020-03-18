@@ -6,7 +6,7 @@
   ".unban": "unbans them scrubs",
   ".kick": "kicks a selected user",
   ".8ball": "Magic 8all",
-  ".clear": "clears messages",
+  ".nuke": "clears messages",
   ".show_code": "shows the code that makes up this bot",
   ".pfp": "shows pfps of users",
   ".mute": "mutes users",

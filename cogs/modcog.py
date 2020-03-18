@@ -5,22 +5,20 @@ import discord
 class ModCommands(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
+		self.giflist = [
+			'https://i.imgur.com/oTyqQAS.gif',
+			'https://i.imgur.com/bfOSpyg.gif',
+			'https://i.imgur.com/r42VJvZ.gif',
+			'https://i.imgur.com/h77zDyQ.gif',
+			'https://i.imgur.com/pgAybBd.gif'
+		]
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
 	async def ban(self, ctx, member: discord.Member, *, reason=None):
-		embed = discord.Embed(
-			color=discord.Color.dark_red(),
-			timestamp=ctx.message.created_at
-		)
-		embed.set_author(name='Banned', icon_url=self.bot.user.avatar_url)
+		gif = random.choice(self.giflist)
+		await ctx.send(f'{member.mention} has been banned for: {reason}\n{gif}')
 		await member.ban(reason=reason)
-		embed.add_field(
-			name=f'{member}',
-			value=f'Has been banned for: {reason} by: {ctx.author}',
-			inline=True
-		)
-		await ctx.send(embed=embed)
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)

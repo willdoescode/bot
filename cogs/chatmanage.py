@@ -8,7 +8,7 @@ class ChatManage(commands.Cog):
 
 	@commands.command()
 	@commands.has_permissions(manage_messages=True)
-	async def clear(self, ctx, amount=100000):
+	async def nuke(self, ctx, amount=100000):
 		embed = discord.Embed(
 			color=discord.Color.red(),
 			timestamp=ctx.message.created_at
