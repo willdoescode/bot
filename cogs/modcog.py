@@ -20,6 +20,10 @@ class ModCommands(commands.Cog):
 		gif = random.choice(self.giflist)
 		await ctx.send(f'{member.mention} has been banned for: {reason}\n{gif}')
 		await member.ban(reason=reason)
+		for guilds in ctx.author.guilds:
+			for channel in guilds.text_channels:
+				if channel.name == 'logs':
+					await channel.send(f'{member.mention} has been banned for: {reason}\n{gif}')
 
 	@commands.command()
 	@commands.has_permissions(administrator=True)
