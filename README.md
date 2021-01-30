@@ -13,15 +13,3 @@
 ## What makes this project special?
 > This is my first ever large python project
 
-## Donate
-[![Donate](https://img.shields.io/badge/$-support-ff69b4.svg?style=flat)](https://paypal.me/williamdlane) 
-
-## Follow me
-> Twitter [@willdoescode](https://twitter.com/willdoescode)
-```javascript
-if(!you.followme) {
-    you.clickTheLinkAbove()
-    you.followme()
-}
-```
-thanks for reading
